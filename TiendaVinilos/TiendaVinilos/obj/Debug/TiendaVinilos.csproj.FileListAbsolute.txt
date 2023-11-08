@@ -28,3 +28,4 @@ C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\De
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
