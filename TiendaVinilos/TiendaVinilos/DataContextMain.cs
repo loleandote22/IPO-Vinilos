@@ -29,7 +29,7 @@ namespace TiendaVinilos
 
         private void hacerAlgo()
         {
-            MessageBox.Show("Bienvenido");
+            MessageBox.Show("Bienvenido Alejandro");
         }
     }
 }
