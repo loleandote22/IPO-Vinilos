@@ -60,3 +60,5 @@ C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laborat
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\inicioUsuaario.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\inicioUsuaario.baml
