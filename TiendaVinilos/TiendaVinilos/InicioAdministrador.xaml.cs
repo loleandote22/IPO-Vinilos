@@ -17,9 +17,9 @@ namespace TiendaVinilos
     /// <summary>
     /// Lógica de interacción para inicioUsuaario.xaml
     /// </summary>
-    public partial class inicioUsuaario : Window
+    public partial class InicioAdministrador : Window
     {
-        public inicioUsuaario()
+        public InicioAdministrador()
         {
             InitializeComponent();
         }

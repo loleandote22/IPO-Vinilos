@@ -1,0 +1,16 @@
+﻿<Window x:Class="TiendaVinilos.InicioAdministrador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TiendaVinilos"
+        mc:Ignorable="d"
+        Title="inicioAdministrador" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    
+    <DockPanel>
+
+        <Button DockPanel.Dock="Top" Height="50" Background="#4b4d4d">Top</Button>
+        <Button Height="50" Background="#000229" Foreground="AliceBlue" VerticalAlignment="Top">claro</Button>
+    </DockPanel>
+</Window>

@@ -23,6 +23,8 @@ namespace TiendaVinilos
         public MainWindow()
         {
             InitializeComponent();
+            InicioAdministrador inicioAdministrador = new InicioAdministrador();
+            inicioAdministrador.Show();
         }
     }
 }
