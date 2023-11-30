@@ -24,31 +24,5 @@ namespace TiendaVinilos
         {
             InitializeComponent();
         }
-        internal class DataContextMain : ViewModelBase
-        {
-            public DataContextMain()
-            {
-                Command = new RelayCommand(new Action<object>((o) => hacerAlgo()));
-            }
-            private ICommand command;
-            private String texto;
-
-            public ICommand Command { get => command; set => command = value; }
-            public string Texto
-            {
-                get => texto;
-                set
-                {
-                    texto = value;
-                    OnPropertyChanged("Texto");
-                }
-
-            }
-
-            private void hacerAlgo()
-            {
-                MessageBox.Show("Bienvenido Alejandro");
-            }
-        }
     }
 }
