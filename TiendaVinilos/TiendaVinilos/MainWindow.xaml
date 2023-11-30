@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="login" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:DataContextMain/>
+    </Window.DataContext>
+    
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"/>
@@ -62,7 +67,7 @@
 
                     <!--Boton de iniciar sesion-->
                     <Button x:Name="btnLogin"  BorderThickness="0" Content="Entrar" Foreground="White" FontSize="20" FontFamily="Bodoni MT" Cursor="Hand"                           
-                            Margin="0,50,0,0">
+                            Margin="0,50,0,0" Command="{Binding Command}">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Black"/>
