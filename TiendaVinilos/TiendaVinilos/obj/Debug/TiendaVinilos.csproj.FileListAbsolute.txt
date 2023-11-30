@@ -16,11 +16,9 @@ C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\De
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\de\MahApps.Metro.resources.dll
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.AssemblyReference.cache
-C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindow.g.cs
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\App.g.cs
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.cache
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.lref
-C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindow.baml
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.g.resources
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.Properties.Resources.resources
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.GenerateResource.cache
@@ -29,3 +27,5 @@ C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\De
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindowCliente.g.cs
+C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindowCliente.baml
