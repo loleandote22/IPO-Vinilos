@@ -78,7 +78,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModelBase.cs" />
-    <Page Include="MainWindowCliente.xaml">
+    <Page Include="Presentacion\MainWindowCliente.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -87,7 +87,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataContextMain.cs" />
-    <Compile Include="MainWindowCliente.xaml.cs">
+    <Compile Include="Presentacion\MainWindowCliente.xaml.cs">
       <DependentUpon>MainWindowCliente.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -118,6 +118,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Presentacion\Iconos\gran-venta.png" />
+    <Resource Include="Presentacion\Iconos\comunicar.png" />
+    <Resource Include="Presentacion\Iconos\guitarrista.png" />
+    <Resource Include="Presentacion\Iconos\vinilo.png" />
+    <Resource Include="Presentacion\Iconos\casa.png" />
+    <Resource Include="Presentacion\Iconos\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Presentacion\Iconos\bolso-shopping-cuadrado-con-asa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentacion\Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

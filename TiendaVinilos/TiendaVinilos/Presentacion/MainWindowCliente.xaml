@@ -11,16 +11,11 @@
     </Window.DataContext>
     <Window.Resources>
         <Style TargetType="Label">
-            <!--<Setter Property="TextAlignment" Value="Center"/>-->
-            <Setter Property="Background" Value="#2c2c2c"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="Height" Value="30"/>
             <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Foreground" Value="DarkGoldenrod"/>
-                    <Setter Property="Background" Value="#2C2C2C"/>
+                    <Setter Property="Foreground" Value="DarkGoldenrod"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -29,8 +24,8 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="Height" Value="30"/>
-            <Setter Property="Padding" Value="0"/>
             <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="0"/>
             <!--<Setter Property="Width" Value="60"/>-->
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -43,7 +38,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Background="#5E5E5E">
+            <Grid Background="#5E5E5E" Height=" 50">
                 <Grid.ColumnDefinitions>
                     <!--Icono-->
                     <ColumnDefinition/>
@@ -56,19 +51,29 @@
                     <!--Idiomas-->
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Image Width="50" Source="/Presentacion/imagenes/logo.jpeg"  HorizontalAlignment="Left" Margin="10"/>
+                <Button HorizontalAlignment="Left" Command="{Binding InicioCommand}" Margin="10,0">
+                    <Grid Background="#5E5E5E">
+                        <Image Source="/Presentacion/Iconos/casa.png" />
+                    </Grid>
+
+                </Button>
                 <ComboBox Width="150" ItemsSource="{Binding ListaIdiomas}" Background="White" SelectedItem="{Binding IdiomaSeleccionado, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" VerticalAlignment="Center" Margin="30,0"/>
-                <Button Grid.Column="3" VerticalAlignment="Center" Command="{Binding CarritoClick}">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="auto">
-                        <Label Content="{Binding ElementosCarrito}" Grid.Column="2" Foreground="WhiteSmoke" Margin="10"/>
-                        <Image Source="/Presentacion/iconos/carro.png" Height="30" />
+                <Button Grid.Column="3" VerticalAlignment="Center" Command="{Binding CommandCompra}">
+                    <StackPanel Orientation="Horizontal" Background="#5E5E5E" VerticalAlignment="Center" Height="auto">
+                        <Label Content="{Binding ElementosCarrito, UpdateSourceTrigger=PropertyChanged}" Background="#5E5E5E" Grid.Column="2" Foreground="WhiteSmoke"/>
+                        <Image Source="/Presentacion/Iconos/bolso-shopping-cuadrado-con-asa.png" />
                     </StackPanel>
                 </Button>
                 <Button  Grid.Column="4" VerticalAlignment="Center" Margin="20,0,30,0" Background="Transparent">
                     <Image Source="/Presentacion/iconos/perfil.png" Height="30" />
                 </Button>
+                <Button Grid.Column="5" Command="{Binding UsuarioCommand}">
+                    <Grid Background="#5E5E5E">
+                        <Image Source="/Presentacion/Iconos/usuario.png" />
+                    </Grid>
+                </Button>
             </Grid>
-            <Grid Grid.Row="1" Background="#FF2C2C2C" VerticalAlignment="Top" Height="auto">
+            <Grid Grid.Row="1" Background="#2C2C2C" VerticalAlignment="Top" Height="40">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -78,26 +83,62 @@
 
                 <Button Command="{Binding CommandArtistas}" >
                     <Button.Content>
-                        <Label Content="Artistas"/>
+                        <Border Background="#2C2C2C" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Presentacion/Iconos/guitarrista.png" />
+                                <Label Grid.Column="1" Content="Artistas"/>
+                            </Grid>
+                        </Border>
                     </Button.Content>
                 </Button>
                 <Button Grid.Column="1" Command="{Binding CommandDiscos}" >
                     <Button.Content>
-                        <Label Content=" Discos"/>
+                        <Border Background="#2C2C2C" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Presentacion/Iconos/vinilo.png" />
+                                <Label Grid.Column="1" Content="Discos"/>
+                            </Grid>
+                        </Border>
                     </Button.Content>
                 </Button>
                 <Button Grid.Column="2" Background="Transparent" Command="{Binding CommandPromociones}" >
                     <Button.Content>
-                        <Label Content="Promociones"/>
+                        <Border Background="#2C2C2C" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Presentacion/Iconos/gran-venta.png" />
+                                <Label Grid.Column="1" Content="Promociones"/>
+                            </Grid>
+                        </Border>
                     </Button.Content>
                 </Button>
                 <Button  Grid.Column="3" Command="{Binding CommandContacto}" >
                     <Button.Content>
-                        <Label Content="Contacto"/>
+                        <Border Background="#2C2C2C" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Presentacion/Iconos/comunicar.png" />
+                                <Label Grid.Column="1" Content="Contacto"/>
+                            </Grid>
+                        </Border>
                     </Button.Content>
                 </Button>
             </Grid>
         </Grid>
-        <Frame Content="{Binding Pantalla, UpdateSourceTrigger=PropertyChanged}" Background="Green" NavigationUIVisibility="Hidden"/>
+        <Frame Content="{Binding Pantalla, UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden"/>
     </DockPanel>
 </Window>
