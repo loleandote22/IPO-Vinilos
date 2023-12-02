@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows;
 using System.Windows.Input;
+using TiendaVinilos.Presentacion.Páginas;
 
 namespace TiendaVinilos
 {
-    internal class DataContextMain: ViewModelBase
+    internal class ViewModelMainCliente: ViewModelBase
     {
         private String texto;
         private String idiomaSeleccionado;
@@ -22,10 +23,10 @@ namespace TiendaVinilos
         private ICommand inicioCommand;
         private List<String> listaIdiomas = new List<string> { "Español", "Inglés" };
         private int elementosCarrito;
-        private Page pantalla;
+        private Object pantalla;
         private String titulo;
        // private 
-        public DataContextMain()
+        public ViewModelMainCliente()
         {
             commandArtistas= new RelayCommand(new Action<object>((o) => verArtistas()));
             commandDiscos= new RelayCommand(new Action<object>((o) => verDiscos()));
@@ -60,14 +61,17 @@ namespace TiendaVinilos
         public ICommand InicioCommand { get => inicioCommand; set => inicioCommand = value; }
         public int ElementosCarrito { get => elementosCarrito; set { elementosCarrito = value;OnPropertyChanged("ElementosCarrito"); } }
         public String Titulo { get => titulo;set=>titulo = value; }
-        public Page Pantalla { get => pantalla; set {
+        public Object Pantalla { get => pantalla; set {
                 pantalla = value;
                 OnPropertyChanged("Pantalla");
             } }
 
 
-        // public DateTime Fecha { get=> }
-        private void verArtistas() { MessageBox.Show("Artistas"); }
+        private void verArtistas() { 
+            ArtistasPage artistas = new ArtistasPage();
+            artistas.DataContext = new ViewModel.ViewModelArtistas( artistas);
+            Pantalla = artistas;
+        }
         private void verDiscos() { MessageBox.Show("Discos"); }
         private void verPromociones() { MessageBox.Show("Promociones"); }
         private void verContacto() { MessageBox.Show("Contacto"); }

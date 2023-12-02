@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\App.xaml
-1-1802989428
+31650260093
 
-81682155373
+111714381600
 22-167160553
-Presentacion\MainWindowCliente.xaml;
+Presentacion\Controles\ArtistaControl.xaml;Presentacion\Páginas\ArtistasPage.xaml;Presentacion\Ventanas\MainWindowCliente.xaml;
 
-False
+True
 

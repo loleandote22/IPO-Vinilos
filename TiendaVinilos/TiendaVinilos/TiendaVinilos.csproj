@@ -77,8 +77,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModelBase.cs" />
-    <Page Include="Presentacion\MainWindowCliente.xaml">
+    <Compile Include="Presentacion\Controles\ArtistaControl.xaml.cs">
+      <DependentUpon>ArtistaControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Páginas\ArtistasPage.xaml.cs">
+      <DependentUpon>ArtistasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelArtistas.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Page Include="Presentacion\Controles\ArtistaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Páginas\ArtistasPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Ventanas\MainWindowCliente.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -86,8 +101,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataContextMain.cs" />
-    <Compile Include="Presentacion\MainWindowCliente.xaml.cs">
+    <Compile Include="ViewModel\ViewModelMainCliente.cs" />
+    <Compile Include="Presentacion\Ventanas\MainWindowCliente.xaml.cs">
       <DependentUpon>MainWindowCliente.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
