@@ -28,3 +28,35 @@ C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\De
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\TiendaVinilos.exe.config
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\TiendaVinilos.exe
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\TiendaVinilos.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\ControlzEx.dll
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.dll
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\MahApps.Metro.dll
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\ControlzEx.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\ControlzEx.xml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.xml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\MahApps.Metro.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\MahApps.Metro.xml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\de\MahApps.Metro.resources.dll
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.AssemblyReference.cache
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindow.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\App.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.cache
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.lref
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindow.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.g.resources
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.Properties.Resources.resources
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.GenerateResource.cache
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CoreCompileInputs.cache
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
