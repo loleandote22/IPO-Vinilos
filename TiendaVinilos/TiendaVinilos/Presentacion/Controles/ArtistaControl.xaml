@@ -8,14 +8,15 @@
     mc:Ignorable="d">
     <Grid>
 
-        <Button Padding="0" Width="250" Height="250" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}" >
-            <StackPanel Orientation="Vertical"  Width="260" Height="250" Background="Olive" Margin="-1" >
-                <Image Height="150" Width="150" Margin=" 0,15,0,15" />
+        <Button Padding="0" Width="200" Height="225" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}" >
+            <StackPanel Orientation="Vertical"  Width="200" Height="225" Background="White" Margin="-1" >
+                <!--<Image Height="150" Width="150" Margin=" 0,15,0,15" />-->
+                <Rectangle Height="150" Width="150" Margin=" 0,15,0,15"  Fill="Orange"/>
                 <Label Content="Eminem" HorizontalContentAlignment="Center" FontSize="20" FontFamily="verdana"/>
             </StackPanel>
 
         </Button>
-        <Border CornerRadius="10" BorderThickness="2" Width="260" Height="250" BorderBrush="Black"/>
+        <Border CornerRadius="5" BorderThickness="2" Width="200" Height="225" BorderBrush="Black"/>
     </Grid>
 
 

@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TiendaVinilos.Presentacion.Páginas"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="1200" Background="Olive"
+      d:DesignHeight="450" d:DesignWidth="1200" 
       Title="ArtistasPage">
-    <!--<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="BlanchedAlmond" HorizontalContentAlignment="Center">
+    <ListView x:Name="Tabla" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="BlanchedAlmond" HorizontalContentAlignment="Center">
         <ListView.ItemsPanel>
             <ItemsPanelTemplate>
                 <WrapPanel MaxWidth="1100" HorizontalAlignment="Center"/>
             </ItemsPanelTemplate>
         </ListView.ItemsPanel>
-    </ListView>-->
-    <ScrollViewer>
+    </ListView>
+    <!--<ScrollViewer>
         <Grid x:Name="tabla" HorizontalAlignment="Center" MaxWidth="1200" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
@@ -27,6 +27,6 @@
             </Grid.RowDefinitions>
         </Grid>
 
-    </ScrollViewer>
+    </ScrollViewer>-->
     
 </Page>

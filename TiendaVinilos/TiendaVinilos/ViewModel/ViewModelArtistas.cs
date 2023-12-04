@@ -17,24 +17,33 @@ namespace TiendaVinilos.ViewModel
         private ArtistasPage artistasPage;
         public ViewModelArtistas(ArtistasPage artistasPage) {
             this.artistasPage = artistasPage;
-            Grid panel = artistasPage.tabla;
+            //Grid panel = artistasPage.tabla;
+            ListView panel = artistasPage.Tabla;
             //ListView panel = (ListView)artistasPage.GetChildObjects().First();
             int i = 0;
+            //while (i < 23)
+            //{
+
+            //    ArtistaControl artistaControl = new ArtistaControl();
+            //    artistaControl.DataContext = new ViewModelArtistaControl(i.ToString());
+            //    Grid.SetColumn(artistaControl, i % 4);
+            //    Grid.SetRow(artistaControl, i / 4);
+            //    panel.Children.Add(artistaControl);
+            //    i++;
+            //    if (i % 4 == 0)
+            //    {
+            //        RowDefinition fila = new RowDefinition();
+            //        fila.Height = new GridLength(270);
+            //        panel.RowDefinitions.Add(fila);
+            //    }
+            //}
             while (i < 23)
             {
 
                 ArtistaControl artistaControl = new ArtistaControl();
                 artistaControl.DataContext = new ViewModelArtistaControl(i.ToString());
-                Grid.SetColumn(artistaControl, i % 4);
-                Grid.SetRow(artistaControl, i / 4);
-                panel.Children.Add(artistaControl);
+                panel.Items.Add(artistaControl);
                 i++;
-                if (i % 4 == 0)
-                {
-                    RowDefinition fila = new RowDefinition();
-                    fila.Height = new GridLength(270);
-                    panel.RowDefinitions.Add(fila);
-                }
             }
         }
 
