@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TiendaVinilos
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para CuadradoPrincipal.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CuadradoPrincipal : UserControl
     {
-        public MainWindow()
+        public CuadradoPrincipal()
         {
             InitializeComponent();
         }

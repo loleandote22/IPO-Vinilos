@@ -77,15 +77,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="inicioUsuaario.xaml.cs">
-      <DependentUpon>inicioUsuaario.xaml</DependentUpon>
+    <Compile Include="ControlCaratula.xaml.cs">
+      <DependentUpon>ControlCaratula.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CuadradoPrincipal.xaml.cs">
+      <DependentUpon>CuadradoPrincipal.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModelBase.cs" />
-    <Page Include="inicioUsuaario.xaml">
+    <Page Include="ControlCaratula.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="CuadradoPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InicioAdministrador.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -93,9 +100,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataContextMain.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="InicioAdministrador.xaml.cs">
+      <DependentUpon>InicioAdministrador.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -127,10 +133,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Sin nombre.png" />
+    <Resource Include="Imagenes\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\circulo.png" />
+    <Resource Include="Imagenes\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\notlike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\artista.png" />
+    <Resource Include="Imagenes\pediso.png" />
+    <Resource Include="Imagenes\promociones.png" />
+    <Resource Include="Imagenes\tienda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\discos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -10,18 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TiendaVinilos
 {
     /// <summary>
-    /// Lógica de interacción para inicioUsuaario.xaml
+    /// Lógica de interacción para ControlCaratula.xaml
     /// </summary>
-    public partial class inicioUsuaario : Window
+    public partial class ControlCaratula : UserControl
     {
-        public inicioUsuaario()
+        
+        public ControlCaratula()
         {
             InitializeComponent();
+            DataContext = this;
         }
+        
     }
 }
