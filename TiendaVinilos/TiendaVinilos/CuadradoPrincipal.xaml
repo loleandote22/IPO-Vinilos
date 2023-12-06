@@ -13,7 +13,7 @@
             <StackPanel Margin="10">
                 <Rectangle Height="130" Width="170" RadiusX="10" RadiusY="10">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="/Imagenes/images.jpeg" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="/Imagenes/imagenesPrincipales/images.jpeg" Stretch="Uniform"/>
                     </Rectangle.Fill>
                 </Rectangle>
 
@@ -22,7 +22,7 @@
                 <Label Content="97,99 €" FontSize="10" HorizontalAlignment="Center" FontWeight="Bold"/>
                 <Rectangle Height="40" Width="40" RadiusX="50" RadiusY="50">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="/Imagenes/like.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="/Imagenes/icon/like.png" Stretch="Uniform"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <Label Content="Envio Gratis" HorizontalAlignment="Center" FontSize="10"/>

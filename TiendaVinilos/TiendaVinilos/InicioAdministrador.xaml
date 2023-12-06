@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TiendaVinilos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000"
+        Title="MainWindow"
+        d:DesignHeight="600" d:DesignWidth="1000"
         WindowStartupLocation="CenterScreen">
 
 
@@ -38,8 +39,8 @@
                 </Grid.ColumnDefinitions>
 
 
-                <ComboBox x:Name="Language" DockPanel.Dock="Top"  VerticalAlignment="Center" HorizontalAlignment="Left" Opacity="0.6" SelectedIndex="0" 
-                    Background="Black" Height="22" Padding="5,3,5,3" MaxWidth="80" Width="52" Grid.Column="3" Margin="10">
+                <ComboBox x:Name="Language" DockPanel.Dock="Top"  VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.6" SelectedIndex="0" 
+                    Background="Black" Height="30" Padding="5,3,5,3" MaxWidth="100" Width="100" Grid.Column="3" Margin="10">
                     <ComboBoxItem x:Name="cbItem1" Content="ES"/>
                     <ComboBoxItem x:Name="cbItem2" Content="EN"/>
                 </ComboBox>
@@ -49,7 +50,7 @@
                         <TextBlock Background="#4b4d4d">
                             <StackPanel Orientation="Horizontal">
                                 
-                                    <Image Source="/Imagenes/Logo.png" Grid.Column="0"  Margin="20,10,0,10" Height="70"/>
+                                    <Image Source="/Imagenes/logo/Logo.png" Grid.Column="0"  Margin="20,10,0,10" Height="70"/>
                                     <Label FontFamily="lucky skirt" FontSize="30" Foreground="#EEEEEE" Content="VINILOS.SA" VerticalContentAlignment="Center"/>
                                
                             </StackPanel>
@@ -57,7 +58,7 @@
                     </Button.Content>
                 </Button>
             </Grid>
-            
+
             <Grid Background="#000229" Grid.Row="1">
 
                 <Grid.ColumnDefinitions>
@@ -68,27 +69,31 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="Artistas" Grid.Column="0" >
-                    <Button.Content>
-                        <TextBlock Text="Artistas" Background="#000229">
-                            <Image Source="/Imagenes/artista.png" Height="20" Width="20" Margin="0,0,5,0"/>
-                            <TextBlock.Style>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Foreground" Value="White"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Foreground" Value="#8CF7F9"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                    </Button.Content>
-                </Button>
+                <!--Menu Artistas-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/Imagenes/icon/artista.png" Width="20" Height="20" Margin="0,0,5,0" />
+                    <Button x:Name="Artistas" Grid.Column="0">
+                        <Button.Content>
+                            <TextBlock Text="Artistas" Background="#000229">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="#8CF7F9"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+                <!--Menu Discos-->
                 <Button x:Name="Discos" Grid.Column="1">
                     <Button.Content>
                         <TextBlock Text="Discos" Background="#000229">
-                            <Image Source="/Imagenes/discos.png" Height="20" Width="20" Margin="0,0,5,0"/>
+                        <Image Source="/Imagenes/discos.png" Height="20" Width="20" Margin="0,0,5,0"/>
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Foreground" Value="White"/>
@@ -102,10 +107,11 @@
                         </TextBlock>
                     </Button.Content>
                 </Button>
+                <!--Menu Promociones-->
                 <Button x:Name="Promociones" Grid.Column="2">
                     <Button.Content>
                         <TextBlock Text="Promociones" Background="#000229">
-                            
+
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Foreground" Value="White"/>
@@ -119,6 +125,7 @@
                         </TextBlock>
                     </Button.Content>
                 </Button>
+                <!--Menu Contacto-->
                 <Button x:Name="Contacto" Grid.Column="3">
                     <Button.Content>
                         <TextBlock Text="Contacto" Background="#000229">
@@ -135,6 +142,7 @@
                         </TextBlock>
                     </Button.Content>
                 </Button>
+                <!--Menu Pedidos-->
                 <Button x:Name="Pedidos" Grid.Column="4">
                     <Button.Content>
                         <TextBlock Text="Pedidos" Background="#000229">
@@ -157,42 +165,57 @@
 
 
         <Grid DockPanel.Dock="Left" Background="#F5F5F5">
+            
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Rectangle Height="160" Width="200" Margin="10" Stroke="Black" VerticalAlignment="Center" Fill="White" RadiusX="16.5" RadiusY="16.5" Grid.Row="2"/>
-            <StackPanel Grid.Row="2">
-                <Label Content="Artistas" FontFamily="Bodoni MT" FontSize="20" Foreground="Black" FontWeight="Bold" Margin="10" HorizontalContentAlignment="Center"/>
-                <ListView Height="100" Width="160" Background="{x:Null}" BorderBrush="{x:Null}">
-                    <local:ControlCaratula Width="120" Height="30"/>
-                    <local:ControlCaratula Width="120" Height="30"/>
-                    <local:ControlCaratula Width="120" Height="30"/>
-                    <local:ControlCaratula Width="120" Height="30"/>
-                    <local:ControlCaratula Width="120" Height="30"/>
-                </ListView>
+             <StackPanel HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Margin="30,0,0,5">
+                <Label Content="Categorias" FontFamily="Bodoni MT" FontSize="20" Foreground="Black" FontWeight="Bold"/>
+                <RadioButton Content="Hip Hop"/>
+                <RadioButton Content="Rock"/>
+                <RadioButton Content="Pop"/>
+                <RadioButton Content="Electronica"/>
+                    
             </StackPanel>
-        </Grid>
 
-        <Grid DockPanel.Dock="Bottom" Background="#F5F5F5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <StackPanel HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Center" Margin="30,0,0,5">
+                <Label Content="Rango de precios" FontFamily="Bodoni MT" FontSize="15" Foreground="Black" FontWeight="Bold"/>
+                <RadioButton Content="- 50€"/>
+                <RadioButton Content="50 - 60€"/>
+                <RadioButton Content="70 - 90€"/>
+                <RadioButton Content="+100€"/>
 
+            </StackPanel>
+
+            <StackPanel  HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Margin="30,0,0,5">
+                <Label Content="Artistas" FontFamily="Bodoni MT" FontSize="15" Foreground="Black" FontWeight="Bold"/>
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Margin="5" Grid.Row="3" Width="150">
+                    <StackPanel x:Name="stackPanelArtistas">
+                        <!-- Artistas originales -->
+                        <TextBlock Text="Eminem" Margin="5"/>
+                        <TextBlock Text="The Beatles" Margin="5"/>
+                        <TextBlock Text="ABBA" Margin="5"/>
+                    </StackPanel>
+                </Border>
+
+                <Button x:Name="btnMas" Content="Más" Margin="5" Click="BtnMas_Click" Grid.Row="1" 
+                        HorizontalAlignment="Center" Background="Pink" Width="50" Height="20" Foreground="Black"/>
+                <Button x:Name="btnMenos" Content="Menos" Margin="5" Click="BtnMenos_Click" Visibility="Collapsed" Grid.Row="1" 
+                        HorizontalAlignment="Center" Background="Pink" Width="50" Height="20" Foreground="Black"/>
+
+            </StackPanel>
             
 
 
-
-
         </Grid>
-       
+
+        <Grid DockPanel.Dock="Bottom" Background="#F5F5F5" x:Name="central">
+           
+        </Grid>
+
     </DockPanel>
 </Window>

@@ -133,25 +133,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logo.png" />
+    <Resource Include="Imagenes\logo\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\images.jpeg" />
+    <Resource Include="Imagenes\imagenesPrincipales\images.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\like.png" />
+    <Resource Include="Imagenes\icon\like.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\notlike.png" />
+    <Resource Include="Imagenes\icon\notlike.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\artista.png" />
-    <Resource Include="Imagenes\pediso.png" />
-    <Resource Include="Imagenes\promociones.png" />
-    <Resource Include="Imagenes\tienda.png" />
+    <Resource Include="Imagenes\icon\artista.png" />
+    <Resource Include="Imagenes\icon\pedidos.png" />
+    <Resource Include="Imagenes\icon\promociones.png" />
+    <Resource Include="Imagenes\icon\tienda.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\discos.png" />
+    <Resource Include="Imagenes\icon\discos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
