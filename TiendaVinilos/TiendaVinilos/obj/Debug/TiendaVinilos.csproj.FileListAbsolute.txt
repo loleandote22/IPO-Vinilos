@@ -59,8 +59,6 @@ C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laborat
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\InicioAdministrador.g.cs
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\InicioAdministrador.baml
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\ControlCaratula.g.cs
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\ControlCaratula.baml
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\CuadradoPrincipal.g.cs
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\CuadradoPrincipal.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_Content.g.cs

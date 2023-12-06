@@ -56,5 +56,15 @@ namespace TiendaVinilos
         }
 
 
+        private void Cerrar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
