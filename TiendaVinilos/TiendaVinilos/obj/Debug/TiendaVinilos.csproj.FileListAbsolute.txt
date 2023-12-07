@@ -4,17 +4,13 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\ControlzEx.dll
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.dll
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\MahApps.Metro.dll
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.dll
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\ControlzEx.pdb
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\ControlzEx.xml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.xml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\MahApps.Metro.pdb
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\MahApps.Metro.xml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\de\MahApps.Metro.resources.dll
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.AssemblyReference.cache
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentacion\Controles\ArtistaControl.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentacion\Páginas\ArtistasPage.g.cs
@@ -99,3 +95,6 @@ C:\Users\yo\Desktop\git\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Tienda
 C:\Users\yo\Desktop\git\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\yo\Desktop\git\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\yo\Desktop\git\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_Content.g.cs
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\System.Data.SqlClient.dll
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\System.Data.SqlClient.xml

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TiendaVinilosModelStoreContainer" CdmEntityContainer="TiendaVinilosEntities">
+    <EntitySetMapping Name="Artista">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Artista">
+        <MappingFragment StoreEntitySet="Artista">
+          <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="inicio" ColumnName="inicio" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="favoritos" ColumnName="favoritos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cancion">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Cancion">
+        <MappingFragment StoreEntitySet="Cancion">
+          <ScalarProperty Name="idCancion" ColumnName="idCancion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComentarioDisco">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.ComentarioDisco">
+        <MappingFragment StoreEntitySet="ComentarioDisco">
+          <ScalarProperty Name="idComentario" ColumnName="idComentario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="publicacion" ColumnName="publicacion" />
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deseo">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Deseo">
+        <MappingFragment StoreEntitySet="Deseo">
+          <ScalarProperty Name="idDeseo" ColumnName="idDeseo" />
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disco">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Disco">
+        <MappingFragment StoreEntitySet="Disco">
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="portada" ColumnName="portada" />
+          <ScalarProperty Name="discografica" ColumnName="discografica" />
+          <ScalarProperty Name="formato" ColumnName="formato" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="publicacion" ColumnName="publicacion" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="favoritos" ColumnName="favoritos" />
+          <ScalarProperty Name="criticos" ColumnName="criticos" />
+          <ScalarProperty Name="unidades" ColumnName="unidades" />
+          <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Duda">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Duda">
+        <MappingFragment StoreEntitySet="Duda">
+          <ScalarProperty Name="idDuda" ColumnName="idDuda" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idAdmin" ColumnName="idAdmin" />
+          <ScalarProperty Name="titutlo" ColumnName="titutlo" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="respuesta" ColumnName="respuesta" />
+          <ScalarProperty Name="publicacion" ColumnName="publicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElementoPedido">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.ElementoPedido">
+        <MappingFragment StoreEntitySet="ElementoPedido">
+          <ScalarProperty Name="idElemento" ColumnName="idElemento" />
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genero">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Genero">
+        <MappingFragment StoreEntitySet="Genero">
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImagenArtista">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.ImagenArtista">
+        <MappingFragment StoreEntitySet="ImagenArtista">
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+          <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+          <ScalarProperty Name="enlace" ColumnName="enlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImagenDisco">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.ImagenDisco">
+        <MappingFragment StoreEntitySet="ImagenDisco">
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+          <ScalarProperty Name="enlace" ColumnName="enlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Integrante">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Integrante">
+        <MappingFragment StoreEntitySet="Integrante">
+          <ScalarProperty Name="idIntegrante" ColumnName="idIntegrante" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="sugerencia" ColumnName="sugerencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tienda">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Tienda">
+        <MappingFragment StoreEntitySet="Tienda">
+          <ScalarProperty Name="idTienda" ColumnName="idTienda" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="apertura" ColumnName="apertura" />
+          <ScalarProperty Name="cierre" ColumnName="cierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="conexion" ColumnName="conexion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElementoCesta">
+      <EntityTypeMapping TypeName="TiendaVinilosModel.ElementoCesta">
+        <MappingFragment StoreEntitySet="ElementoCesta">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idDisco" ColumnName="idDisco" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

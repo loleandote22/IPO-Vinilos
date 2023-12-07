@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TiendaVinilosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artista">
+    <Key>
+      <PropertyRef Name="idArtista" />
+    </Key>
+    <Property Name="idArtista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="inicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idGenero" Type="Int32" />
+    <Property Name="favoritos" Type="Int32" />
+    <NavigationProperty Name="Genero" Relationship="Self.FK_Artista_Genero" FromRole="Artista" ToRole="Genero" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Disco_Artista" FromRole="Artista" ToRole="Disco" />
+    <NavigationProperty Name="ImagenArtista" Relationship="Self.FK_ImagenArtista_Artista" FromRole="Artista" ToRole="ImagenArtista" />
+    <NavigationProperty Name="Integrante" Relationship="Self.FK_Integrante_Artista" FromRole="Artista" ToRole="Integrante" />
+  </EntityType>
+  <EntityType Name="Cancion">
+    <Key>
+      <PropertyRef Name="idCancion" />
+    </Key>
+    <Property Name="idCancion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idDisco" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Cancion_Disco" FromRole="Cancion" ToRole="Disco" />
+  </EntityType>
+  <EntityType Name="ComentarioDisco">
+    <Key>
+      <PropertyRef Name="idComentario" />
+    </Key>
+    <Property Name="idComentario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="contenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idDisco" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Table_1_Disco" FromRole="ComentarioDisco" ToRole="Disco" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Table_1_Usuario" FromRole="ComentarioDisco" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Deseo">
+    <Key>
+      <PropertyRef Name="idDeseo" />
+    </Key>
+    <Property Name="idDeseo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDisco" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Deseo_Disco" FromRole="Deseo" ToRole="Disco" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Deseo_Usuario" FromRole="Deseo" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Disco">
+    <Key>
+      <PropertyRef Name="idDisco" />
+    </Key>
+    <Property Name="idDisco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="portada" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="discografica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="formato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publicacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="idGenero" Type="Int32" />
+    <Property Name="favoritos" Type="Int32" />
+    <Property Name="criticos" Type="Int32" />
+    <Property Name="unidades" Type="Int32" />
+    <Property Name="idArtista" Type="Int32" />
+    <NavigationProperty Name="Artista" Relationship="Self.FK_Disco_Artista" FromRole="Disco" ToRole="Artista" />
+    <NavigationProperty Name="Cancion" Relationship="Self.FK_Cancion_Disco" FromRole="Disco" ToRole="Cancion" />
+    <NavigationProperty Name="ComentarioDisco" Relationship="Self.FK_Table_1_Disco" FromRole="Disco" ToRole="ComentarioDisco" />
+    <NavigationProperty Name="Deseo" Relationship="Self.FK_Deseo_Disco" FromRole="Disco" ToRole="Deseo" />
+    <NavigationProperty Name="Genero" Relationship="Self.FK_Disco_Genero" FromRole="Disco" ToRole="Genero" />
+    <NavigationProperty Name="ElementoPedido" Relationship="Self.FK_Elemento_Disco" FromRole="Disco" ToRole="ElementoPedido" />
+    <NavigationProperty Name="ElementoCesta" Relationship="Self.FK_ElementoCesta_Disco" FromRole="Disco" ToRole="ElementoCesta" />
+    <NavigationProperty Name="ImagenDisco" Relationship="Self.FK_ImagenDisco_Disco" FromRole="Disco" ToRole="ImagenDisco" />
+  </EntityType>
+  <EntityType Name="Duda">
+    <Key>
+      <PropertyRef Name="idDuda" />
+    </Key>
+    <Property Name="idDuda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" />
+    <Property Name="idAdmin" Type="Int32" />
+    <Property Name="titutlo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="respuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="publicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Duda_Admin" FromRole="Duda" ToRole="Usuario" />
+    <NavigationProperty Name="Usuario1" Relationship="Self.FK_Duda_Usuario" FromRole="Duda" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="ElementoPedido">
+    <Key>
+      <PropertyRef Name="idElemento" />
+    </Key>
+    <Property Name="idElemento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDisco" Type="Int32" />
+    <Property Name="precio" Type="Double" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="idPedido" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Elemento_Disco" FromRole="ElementoPedido" ToRole="Disco" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK_ElementoPedido_Pedido" FromRole="ElementoPedido" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Genero">
+    <Key>
+      <PropertyRef Name="idGenero" />
+    </Key>
+    <Property Name="idGenero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Artista" Relationship="Self.FK_Artista_Genero" FromRole="Genero" ToRole="Artista" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Disco_Genero" FromRole="Genero" ToRole="Disco" />
+  </EntityType>
+  <EntityType Name="ImagenArtista">
+    <Key>
+      <PropertyRef Name="idImagen" />
+    </Key>
+    <Property Name="idImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idArtista" Type="Int32" Nullable="false" />
+    <Property Name="enlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Artista" Relationship="Self.FK_ImagenArtista_Artista" FromRole="ImagenArtista" ToRole="Artista" />
+  </EntityType>
+  <EntityType Name="ImagenDisco">
+    <Key>
+      <PropertyRef Name="idImagen" />
+    </Key>
+    <Property Name="idImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idDisco" Type="Int32" Nullable="false" />
+    <Property Name="enlace" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_ImagenDisco_Disco" FromRole="ImagenDisco" ToRole="Disco" />
+  </EntityType>
+  <EntityType Name="Integrante">
+    <Key>
+      <PropertyRef Name="idIntegrante" />
+    </Key>
+    <Property Name="idIntegrante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idArtista" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Artista" Relationship="Self.FK_Integrante_Artista" FromRole="Integrante" ToRole="Artista" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="idPedido" />
+    </Key>
+    <Property Name="idPedido" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sugerencia" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ElementoPedido" Relationship="Self.FK_ElementoPedido_Pedido" FromRole="Pedido" ToRole="ElementoPedido" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Pedido_Usuario" FromRole="Pedido" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Tienda">
+    <Key>
+      <PropertyRef Name="idTienda" />
+    </Key>
+    <Property Name="idTienda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ubicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apertura" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="cierre" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="imagen" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="conexion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ComentarioDisco" Relationship="Self.FK_Table_1_Usuario" FromRole="Usuario" ToRole="ComentarioDisco" />
+    <NavigationProperty Name="Deseo" Relationship="Self.FK_Deseo_Usuario" FromRole="Usuario" ToRole="Deseo" />
+    <NavigationProperty Name="Duda" Relationship="Self.FK_Duda_Admin" FromRole="Usuario" ToRole="Duda" />
+    <NavigationProperty Name="Duda1" Relationship="Self.FK_Duda_Usuario" FromRole="Usuario" ToRole="Duda" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK_Pedido_Usuario" FromRole="Usuario" ToRole="Pedido" />
+    <NavigationProperty Name="ElementoCesta" Relationship="Self.FK_ElementoCesta_Usuario" FromRole="Usuario" ToRole="ElementoCesta" />
+  </EntityType>
+  <EntityType Name="ElementoCesta">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+      <PropertyRef Name="idDisco" />
+      <PropertyRef Name="cantidad" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="idDisco" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_ElementoCesta_Disco" FromRole="ElementoCesta" ToRole="Disco" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_ElementoCesta_Usuario" FromRole="ElementoCesta" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Artista_Genero">
+    <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
+    <End Role="Artista" Type="Self.Artista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="Artista">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disco_Artista">
+    <End Role="Artista" Type="Self.Artista" Multiplicity="0..1" />
+    <End Role="Disco" Type="Self.Disco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artista">
+        <PropertyRef Name="idArtista" />
+      </Principal>
+      <Dependent Role="Disco">
+        <PropertyRef Name="idArtista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImagenArtista_Artista">
+    <End Role="Artista" Type="Self.Artista" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ImagenArtista" Type="Self.ImagenArtista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artista">
+        <PropertyRef Name="idArtista" />
+      </Principal>
+      <Dependent Role="ImagenArtista">
+        <PropertyRef Name="idArtista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Integrante_Artista">
+    <End Role="Artista" Type="Self.Artista" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Integrante" Type="Self.Integrante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artista">
+        <PropertyRef Name="idArtista" />
+      </Principal>
+      <Dependent Role="Integrante">
+        <PropertyRef Name="idArtista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cancion_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cancion" Type="Self.Cancion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="Cancion">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComentarioDisco" Type="Self.ComentarioDisco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="ComentarioDisco">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComentarioDisco" Type="Self.ComentarioDisco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="ComentarioDisco">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deseo_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Deseo" Type="Self.Deseo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="Deseo">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Deseo_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Deseo" Type="Self.Deseo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Deseo">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disco_Genero">
+    <End Role="Genero" Type="Self.Genero" Multiplicity="0..1" />
+    <End Role="Disco" Type="Self.Disco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="idGenero" />
+      </Principal>
+      <Dependent Role="Disco">
+        <PropertyRef Name="idGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Elemento_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="0..1" />
+    <End Role="ElementoPedido" Type="Self.ElementoPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="ElementoPedido">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ElementoCesta_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ElementoCesta" Type="Self.ElementoCesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="ElementoCesta">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImagenDisco_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ImagenDisco" Type="Self.ImagenDisco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="ImagenDisco">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Duda_Admin">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Duda" Type="Self.Duda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Duda">
+        <PropertyRef Name="idAdmin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Duda_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Duda" Type="Self.Duda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Duda">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ElementoPedido_Pedido">
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ElementoPedido" Type="Self.ElementoPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="idPedido" />
+      </Principal>
+      <Dependent Role="ElementoPedido">
+        <PropertyRef Name="idPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ElementoCesta_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ElementoCesta" Type="Self.ElementoCesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="ElementoCesta">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TiendaVinilosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artista" EntityType="Self.Artista" />
+    <EntitySet Name="Cancion" EntityType="Self.Cancion" />
+    <EntitySet Name="ComentarioDisco" EntityType="Self.ComentarioDisco" />
+    <EntitySet Name="Deseo" EntityType="Self.Deseo" />
+    <EntitySet Name="Disco" EntityType="Self.Disco" />
+    <EntitySet Name="Duda" EntityType="Self.Duda" />
+    <EntitySet Name="ElementoPedido" EntityType="Self.ElementoPedido" />
+    <EntitySet Name="Genero" EntityType="Self.Genero" />
+    <EntitySet Name="ImagenArtista" EntityType="Self.ImagenArtista" />
+    <EntitySet Name="ImagenDisco" EntityType="Self.ImagenDisco" />
+    <EntitySet Name="Integrante" EntityType="Self.Integrante" />
+    <EntitySet Name="Pedido" EntityType="Self.Pedido" />
+    <EntitySet Name="Tienda" EntityType="Self.Tienda" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="ElementoCesta" EntityType="Self.ElementoCesta" />
+    <AssociationSet Name="FK_Artista_Genero" Association="Self.FK_Artista_Genero">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="Artista" EntitySet="Artista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disco_Artista" Association="Self.FK_Disco_Artista">
+      <End Role="Artista" EntitySet="Artista" />
+      <End Role="Disco" EntitySet="Disco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImagenArtista_Artista" Association="Self.FK_ImagenArtista_Artista">
+      <End Role="Artista" EntitySet="Artista" />
+      <End Role="ImagenArtista" EntitySet="ImagenArtista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Integrante_Artista" Association="Self.FK_Integrante_Artista">
+      <End Role="Artista" EntitySet="Artista" />
+      <End Role="Integrante" EntitySet="Integrante" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cancion_Disco" Association="Self.FK_Cancion_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="Cancion" EntitySet="Cancion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_Disco" Association="Self.FK_Table_1_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="ComentarioDisco" EntitySet="ComentarioDisco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_Usuario" Association="Self.FK_Table_1_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ComentarioDisco" EntitySet="ComentarioDisco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deseo_Disco" Association="Self.FK_Deseo_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="Deseo" EntitySet="Deseo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Deseo_Usuario" Association="Self.FK_Deseo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Deseo" EntitySet="Deseo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disco_Genero" Association="Self.FK_Disco_Genero">
+      <End Role="Genero" EntitySet="Genero" />
+      <End Role="Disco" EntitySet="Disco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Elemento_Disco" Association="Self.FK_Elemento_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="ElementoPedido" EntitySet="ElementoPedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ElementoCesta_Disco" Association="Self.FK_ElementoCesta_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="ElementoCesta" EntitySet="ElementoCesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImagenDisco_Disco" Association="Self.FK_ImagenDisco_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="ImagenDisco" EntitySet="ImagenDisco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Duda_Admin" Association="Self.FK_Duda_Admin">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Duda" EntitySet="Duda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Duda_Usuario" Association="Self.FK_Duda_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Duda" EntitySet="Duda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ElementoPedido_Pedido" Association="Self.FK_ElementoPedido_Pedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="ElementoPedido" EntitySet="ElementoPedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Usuario" Association="Self.FK_Pedido_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ElementoCesta_Usuario" Association="Self.FK_ElementoCesta_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ElementoCesta" EntitySet="ElementoCesta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

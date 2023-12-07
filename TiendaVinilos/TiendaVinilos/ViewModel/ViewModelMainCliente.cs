@@ -25,7 +25,8 @@ namespace TiendaVinilos
         private int elementosCarrito;
         private Object pantalla;
         private String titulo;
-       // private 
+        public TiendaVinilosEntities contexto = new TiendaVinilosEntities();
+        // private 
         public ViewModelMainCliente()
         {
             commandArtistas= new RelayCommand(new Action<object>((o) => verArtistas()));
@@ -69,7 +70,7 @@ namespace TiendaVinilos
 
         private void verArtistas() { 
             ArtistasPage artistas = new ArtistasPage();
-            artistas.DataContext = new ViewModel.ViewModelArtistas( artistas);
+            artistas.DataContext = new ViewModel.ViewModelArtistas( artistas, contexto);
             Pantalla = artistas;
         }
         private void verDiscos() { MessageBox.Show("Discos"); }

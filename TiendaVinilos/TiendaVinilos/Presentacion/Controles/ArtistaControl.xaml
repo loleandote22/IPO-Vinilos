@@ -8,13 +8,11 @@
     mc:Ignorable="d">
     <Grid>
 
-        <Button Padding="0" Width="200" Height="225" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}" >
+        <Button Padding="0" Width="200" Height="225" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}" Cursor="Hand">
             <StackPanel Orientation="Vertical"  Width="200" Height="225" Background="White" Margin="-1" >
-                <!--<Image Height="150" Width="150" Margin=" 0,15,0,15" />-->
-                <Rectangle Height="150" Width="150" Margin=" 0,15,0,15"  Fill="Orange"/>
-                <Label Content="Eminem" HorizontalContentAlignment="Center" FontSize="20" FontFamily="verdana"/>
+                <Image  Source="{Binding ImagenArtista}" Height="150" Width="150" Margin=" 0,15,0,15"/>
+                <Label Content="{Binding Artista.nombre}" HorizontalContentAlignment="Center" FontSize="20" FontFamily="verdana"/>
             </StackPanel>
-
         </Button>
         <Border CornerRadius="5" BorderThickness="2" Width="200" Height="225" BorderBrush="Black"/>
     </Grid>
