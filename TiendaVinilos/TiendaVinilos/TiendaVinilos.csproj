@@ -116,7 +116,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="IPO-Vinilos-7-pagina-artistas.zip" />
     <None Include="IPO-Vinilos-7-pagina-artistas\IPO-Vinilos-7-pagina-artistas\README.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
