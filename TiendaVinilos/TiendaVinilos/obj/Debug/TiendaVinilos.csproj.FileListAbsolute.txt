@@ -49,7 +49,6 @@ C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laborat
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.AssemblyReference.cache
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindow.g.cs
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\App.g.cs
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.cache
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.lref
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindow.baml
@@ -60,3 +59,4 @@ C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laborat
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\GeneratedInternalTypeHelper.g.cs
