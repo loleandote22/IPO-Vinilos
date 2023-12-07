@@ -45,24 +45,24 @@
                     <Button.Content>
                         <TextBlock Background="#4b4d4d">
                             <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Imagenes/logo/Logo.png" Margin="20,10,0,10" Height="70"/>
+                                    <Image Source="/Presentación/Imágenes/Logo.png" Margin="20,10,0,10" Height="70"/>
                                     <Label FontFamily="lucky skirt" FontSize="30" Foreground="#EEEEEE" Content="VINILOS.SA" VerticalContentAlignment="Center"/>
                             </StackPanel>
                         </TextBlock>
                     </Button.Content>
                 </Button>
 
-                <ComboBox x:Name="Language" DockPanel.Dock="Top"  VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.6" SelectedIndex="0" 
-                        Background="Black" Height="30" Padding="5,3,5,3" MaxWidth="100" Width="100" Grid.Column="3" Margin="10">
-                    <ComboBoxItem x:Name="cbItem1" Content="ES"/>
-                    <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+                <ComboBox DockPanel.Dock="Top" VerticalContentAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0" 
+                        Background="Black" Height="30"  MaxWidth="100" Width="100" Grid.Column="3" Margin="10">
+                    <ComboBoxItem  Content="Español"/>
+                    <ComboBoxItem  Content="Inglés"/>
                 </ComboBox>
 
                 <Button Grid.Column="4" Margin="15">
                     <Button.Content>
                         <TextBlock Background="#4b4d4d">
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="Imagenes/icon/usuario.png" Height="50"/>
+                                <Image Source="/Presentación/Iconos/usuario.png"  Height="50"/>
                             </StackPanel>
                         </TextBlock>
                     </Button.Content>                   
@@ -70,15 +70,7 @@
 
 
 
-                <Button Grid.Column="5" Margin="15">
-                    <Button.Content>
-                        <TextBlock Background="#4b4d4d">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="Imagenes/icon/bolso-shopping-cuadrado-con-asa.png" Height="50"/>
-                            </StackPanel>
-                        </TextBlock>
-                    </Button.Content>
-                </Button>
+               
             </Grid>
 
             <Grid Background="#000229" Grid.Row="1">
@@ -206,7 +198,7 @@
 
             <StackPanel HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Center" Margin="30,0,0,20">
                 <Label Content="Rango de precios" FontFamily="Bodoni MT" FontSize="15" Foreground="Black" FontWeight="Bold"/>
-                <RadioButton Content="- 50€"/>
+                <RadioButton Content="- 50€" />
                 <RadioButton Content="50 - 60€"/>
                 <RadioButton Content="70 - 90€"/>
                 <RadioButton Content="+100€"/>

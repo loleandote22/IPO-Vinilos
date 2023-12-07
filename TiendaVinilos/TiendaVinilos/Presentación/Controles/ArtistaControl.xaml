@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="TiendaVinilos.Presentacion.ArtistaControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:TiendaVinilos.Presentacion"
+    mc:Ignorable="d">
+    <Grid>
+
+        <Button Padding="0" Width="200" Height="225" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}" Cursor="Hand">
+            <StackPanel Orientation="Vertical"  Width="200" Height="225" Background="White" Margin="-1" >
+                <Image  Source="{Binding ImagenArtista}" Height="150" Width="150" Margin=" 0,15,0,15"/>
+                <Label Content="{Binding Artista.nombre}" HorizontalContentAlignment="Center" FontSize="20" FontFamily="verdana"/>
+            </StackPanel>
+        </Button>
+        <Border CornerRadius="5" BorderThickness="2" Width="200" Height="225" BorderBrush="Black"/>
+    </Grid>
+
+
+</UserControl>
