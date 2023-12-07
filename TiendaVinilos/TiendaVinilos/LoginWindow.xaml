@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
-        <local:DataContextMain/>
+        <local:LoginViewModel/>
     </Window.DataContext>
     
     <Window.Resources>
@@ -67,7 +67,7 @@
 
                     <!--Boton de iniciar sesion-->
                     <Button x:Name="btnLogin"  BorderThickness="0" Content="Entrar" Foreground="White" FontSize="20" FontFamily="Bodoni MT" Cursor="Hand"                           
-                            Margin="0,50,0,0" Command="{Binding Command}">
+                            Margin="0,50,0,0" Command="{Binding AccederCommand}">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Black"/>
