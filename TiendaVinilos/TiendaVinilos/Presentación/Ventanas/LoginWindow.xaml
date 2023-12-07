@@ -1,4 +1,4 @@
-﻿<Window x:Class="TiendaVinilos.MainWindow"
+﻿<Window x:Class="TiendaVinilos.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,9 +8,6 @@
         Title="login" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen">
 
-    <Window.DataContext>
-        <local:DataContextMain/>
-    </Window.DataContext>
     
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -31,7 +28,7 @@
             </Grid.ColumnDefinitions>
 
             <Rectangle Grid.Column="0" Fill="#EEEEEE"/>
-            <Image Source="/Imagenes/Sin nombre.png" Height="250" Width="250" Grid.Column="0"/>
+            <Image Source="/Presentación/Imágenes/Sin nombre.png" Height="250" Width="250" Grid.Column="0"/>
             <Rectangle Grid.Column="1" Fill="#9e9e9e" Opacity="0.9"/>
 
             <Grid Grid.Column="1">
@@ -47,27 +44,26 @@
 
                     <!--Nombre de usuario o correo electronico-->
                     <TextBlock Text="Usuario"/>
-                    <TextBox x:Name="User" FontSize="14" FontWeight="Medium" FontFamily="Bodoni MT" Foreground="Black"  CaretBrush="LightGray" 
+                    <TextBox  FontSize="14" FontWeight="Medium" FontFamily="Bodoni MT" CaretBrush="LightGray"  Text="{Binding Nombre, UpdateSourceTrigger=LostFocus}"
                              BorderBrush="Black" BorderThickness="0,0,0,3" Height="27" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0" 
                              MaxLength="25">
                         <TextBox.Background>
-                            <ImageBrush ImageSource="Imagenes/user-icon.png" Stretch="None" AlignmentX="Left"/>
+                            <ImageBrush ImageSource="/Presentación/Imágenes/user-icon.png" Stretch="None" AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
 
                     <!--Contraseña-->
                     <TextBlock Text="Contraseña"/>
-                    <PasswordBox x:Name="txtPassword" FontSize="14" FontWeight="Medium" FontFamily="Bodoni MT" Foreground="Black"  CaretBrush="pink" 
+                    <PasswordBox Name="contaseña" FontSize="14"  FontWeight="Medium" FontFamily="Bodoni MT"   CaretBrush="pink"  
                              BorderBrush="Black" BorderThickness="0,0,0,3" Height="27" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
-
                         <PasswordBox.Background>
-                            <ImageBrush ImageSource="Imagenes/key-icon.png" Stretch="None" AlignmentX="Left"/>
+                            <ImageBrush ImageSource="/Presentación/Imágenes/key-icon.png" Stretch="None" AlignmentX="Left"/>
                         </PasswordBox.Background>
                     </PasswordBox>
 
                     <!--Boton de iniciar sesion-->
                     <Button x:Name="btnLogin"  BorderThickness="0" Content="Entrar" Foreground="White" FontSize="20" FontFamily="Bodoni MT" Cursor="Hand"                           
-                            Margin="0,50,0,0" Command="{Binding Command}">
+                            Margin="0,50,0,0" Command="{Binding AccederCommand}">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Black"/>
