@@ -29,7 +29,16 @@ namespace TiendaVinilos
 
         private void hacerAlgo()
         {
-            MessageBox.Show("Bienvenido Alejandro");
-        }
+        //    if (usuario.tipo == "Administrador")
+        //    {
+        //        MainWindowAdministrador ventana = new MainWindowAdministrador();
+        //        ventana.Show();
+        //    }
+        //    else
+        //    {
+        //        MainWindowCliente ventana = new MainWindowCliente();
+        //        ventana.show();
+        //    }
+        //}
     }
 }
