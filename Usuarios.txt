@@ -1,0 +1,7 @@
+Administrador
+nombre: Manolo
+contraseña: manolo
+
+Cliente
+nombre: Jose
+contraseña:jose
