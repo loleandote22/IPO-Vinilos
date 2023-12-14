@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TiendaVinilos"
+        xmlns:local1="clr-namespace:TiendaVinilos.ViewModelCliente"
         mc:Ignorable="d"
         Title="{Binding Titulo, UpdateSourceTrigger=PropertyChanged}" Height="450" Width="1000">
     <Window.DataContext>
-        <local:ViewModelMainCliente/>
+        <local1:ViewModelMain/>
     </Window.DataContext>
     <Window.Resources>
         <Style TargetType="Label">

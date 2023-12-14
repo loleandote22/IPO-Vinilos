@@ -22,7 +22,7 @@ namespace TiendaVinilos
     {
         public LoginWindow()
         {
-            DataContext =new LoginViewModel(this);
+            DataContext =new ViewModelLogin(this);
             InitializeComponent();
         }
     }

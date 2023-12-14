@@ -8,9 +8,9 @@ using System.Windows;
 using System.Windows.Input;
 using TiendaVinilos.Presentacion.Páginas;
 
-namespace TiendaVinilos
+namespace TiendaVinilos.ViewModelCliente
 {
-    internal class ViewModelMainCliente: ViewModelBase
+    internal class ViewModelMain: ViewModelBase
     {
         private String texto;
         private String idiomaSeleccionado;
@@ -27,7 +27,7 @@ namespace TiendaVinilos
         private String titulo;
         public TiendaVinilosEntities contexto = new TiendaVinilosEntities();
         // private 
-        public ViewModelMainCliente()
+        public ViewModelMain()
         {
             commandArtistas= new RelayCommand(new Action<object>((o) => verArtistas()));
             commandDiscos= new RelayCommand(new Action<object>((o) => verDiscos()));
@@ -70,7 +70,7 @@ namespace TiendaVinilos
 
         private void verArtistas() { 
             ArtistasPage artistas = new ArtistasPage();
-            artistas.DataContext = new ViewModel.ViewModelArtistas( artistas, contexto);
+            artistas.DataContext = new ViewModelArtistas( artistas, contexto);
             Pantalla = artistas;
             Titulo = "Atistas";
         }
