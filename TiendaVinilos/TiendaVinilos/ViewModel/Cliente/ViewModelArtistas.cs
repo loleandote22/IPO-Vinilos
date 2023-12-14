@@ -13,7 +13,7 @@ using TiendaVinilos.EntidadesAuxiliares;
 using TiendaVinilos.Presentacion;
 using TiendaVinilos.Presentacion.Páginas;
 
-namespace TiendaVinilos.ViewModel
+namespace TiendaVinilos.ViewModelCliente
 {
     internal class ViewModelArtistas :ViewModelBase
     {

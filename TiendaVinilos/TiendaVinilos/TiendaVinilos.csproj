@@ -152,8 +152,11 @@
     <Compile Include="Presentación\Controles\ArtistaControl.xaml.cs">
       <DependentUpon>ArtistaControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentación\Páginas\ArtistasPage.xaml.cs">
-      <DependentUpon>ArtistasPage.xaml</DependentUpon>
+    <Compile Include="Presentación\Páginas\ArtistasClientePage.xaml.cs">
+      <DependentUpon>ArtistasClientePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Páginas\DiscosAdministradorPage.xaml.cs">
+      <DependentUpon>DiscosAdministradorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentación\Ventanas\MainWindowAdministrador.xaml.cs">
       <DependentUpon>MainWindowAdministrador.xaml</DependentUpon>
@@ -161,23 +164,29 @@
     <Compile Include="Presentación\Ventanas\MainWindowCliente.xaml.cs">
       <DependentUpon>MainWindowCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\Administrador\ViewModelMain.cs" />
+    <Compile Include="ViewModel\ViewModelLogin.cs" />
     <Compile Include="Tienda.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ViewModelArtistas.cs" />
+    <Compile Include="ViewModel\Cliente\ViewModelArtistas.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="ViewModel\ViewModelMainCliente.cs" />
+    <Compile Include="ViewModel\Administrador\ViewModelDiscos.cs" />
+    <Compile Include="ViewModel\Cliente\ViewModelMain.cs" />
     <Page Include="Presentación\Controles\ArtistaControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentación\Páginas\ArtistasPage.xaml">
+    <Page Include="Presentación\Páginas\ArtistasClientePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentación\Páginas\DiscosAdministradorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentación\Ventanas\MainWindowAdministrador.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +235,7 @@
       <DependentUpon>Entidades.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <Resource Include="Presentación\Fuentes\Lucky Skirt %28DEMO%29.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -233,9 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Presentación\Imágenes\Sin nombre.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Presentación\Imágenes\circulo.png" />
@@ -269,7 +276,18 @@
       <DependentUpon>Entidades.edmx</DependentUpon>
       <LastGenOutput>Entidades.cs</LastGenOutput>
     </Content>
-    <Resource Include="Presentación\Imágenes\Logo.png" />
+    <Resource Include="Presentación\Imágenes\logoLogin.png" />
+    <Resource Include="Presentación\Imágenes\LogoP.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\artistas.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\bolso-shopping-cuadrado-con-asa.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\canciones.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\carrito.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\contacto.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\like.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\notlike.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\pedidos.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\promociones.png" />
+    <Resource Include="Presentación\IconosAdmin\PaginaPrincipal\usuario.png" />
     <Resource Include="Presentación\IconosAdmin\artista.png" />
     <Resource Include="Presentación\IconosAdmin\bolso-shopping-cuadrado-con-asa.png" />
     <Resource Include="Presentación\IconosAdmin\discos.png" />
@@ -295,6 +313,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -13,16 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TiendaVinilos
+namespace TiendaVinilos.Presentación.Páginas
 {
     /// <summary>
-    /// Lógica de interacción para LoginWindow.xaml
-    /// </summary>s
-    public partial class LoginWindow : Window
+    /// Lógica de interacción para DiscosAdminPage.xaml
+    /// </summary>
+    public partial class DiscosAdminPage : Page
     {
-        public LoginWindow()
+        public DiscosAdminPage()
         {
-            DataContext =new ViewModelLogin(this);
             InitializeComponent();
         }
     }

@@ -10,14 +10,14 @@ using System.Windows.Input;
 
 namespace TiendaVinilos
 {
-    internal class LoginViewModel:ViewModelBase
+    internal class ViewModelLogin:ViewModelBase
     {
 
         private TiendaVinilosEntities contexto = new TiendaVinilosEntities();
         private string nombre;
         private ICommand accederCommand;
         private LoginWindow loginWindow;
-        public LoginViewModel(LoginWindow ventana)
+        public ViewModelLogin(LoginWindow ventana)
         {
             AccederCommand = new RelayCommand(new Action<object>((o) => acceder()));
             loginWindow = ventana;
