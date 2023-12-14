@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TiendaVinilos.Presentación.Páginas
 {
     /// <summary>
-    /// Lógica de interacción para DiscosAdminPage.xaml
+    /// Lógica de interacción para DiscosAdministradorPage.xaml
     /// </summary>
-    public partial class DiscosAdminPage : Page
+    public partial class DiscosAdministradorPage : Page
     {
-        public DiscosAdminPage()
+        public DiscosAdministradorPage()
         {
             InitializeComponent();
         }
