@@ -57,11 +57,6 @@ C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laborat
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\InicioAdministrador.g.cs
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\InicioAdministrador.baml
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\CuadradoPrincipal.g.cs
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\CuadradoPrincipal.baml
-C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_Content.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\TiendaVinilos.exe.config
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\TiendaVinilos.exe
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\bin\Debug\TiendaVinilos.pdb
@@ -95,3 +90,17 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindowAdministrador.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Artistas.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Contacto.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Discos.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Pedidos.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Promociones.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\MainWindowAdministrador.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Artistas.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Contacto.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Discos.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Pedidos.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Paginas\Promociones.baml
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\ElemReutilizabbles\CuadradoPrincipal.g.cs
+C:\Users\Amparo-UNI\Desktop\UNIVERSIDAD\Tercer año\SistemasInteligentes\Laboratorio\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\ElemReutilizabbles\CuadradoPrincipal.baml

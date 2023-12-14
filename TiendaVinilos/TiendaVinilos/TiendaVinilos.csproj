@@ -77,15 +77,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CuadradoPrincipal.xaml.cs">
+    <Compile Include="ElemReutilizabbles\CuadradoPrincipal.xaml.cs">
       <DependentUpon>CuadradoPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Artistas.xaml.cs">
+      <DependentUpon>Artistas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Contacto.xaml.cs">
+      <DependentUpon>Contacto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Discos.xaml.cs">
+      <DependentUpon>Discos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Pedidos.xaml.cs">
+      <DependentUpon>Pedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Promociones.xaml.cs">
+      <DependentUpon>Promociones.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModelBase.cs" />
-    <Page Include="CuadradoPrincipal.xaml">
+    <Compile Include="ViewModel\ViewModelAdministrador.cs" />
+    <Page Include="ElemReutilizabbles\CuadradoPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InicioAdministrador.xaml">
+    <Page Include="MainWindowAdministrador.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -93,10 +109,30 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InicioAdministrador.xaml.cs">
-      <DependentUpon>InicioAdministrador.xaml</DependentUpon>
+    <Compile Include="MainWindowAdministrador.xaml.cs">
+      <DependentUpon>MainWindowAdministrador.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Paginas\Artistas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Contacto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Discos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Pedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Promociones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -116,7 +152,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="IPO-Vinilos-7-pagina-artistas\IPO-Vinilos-7-pagina-artistas\README.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,9 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Imagenes\logo\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\imagenesPrincipales\images.jpeg" />
@@ -139,22 +171,19 @@
     <Resource Include="Imagenes\icon\notlike.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\icon\artista.png" />
     <Resource Include="Imagenes\icon\pedidos.png" />
     <Resource Include="Imagenes\icon\promociones.png" />
-    <Resource Include="Imagenes\icon\tienda.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Imagenes\icon\discos.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\icon\bolso-shopping-cuadrado-con-asa.png" />
     <Resource Include="Imagenes\icon\usuario.png" />
-    <Content Include="IPO-Vinilos-7-pagina-artistas\IPO-Vinilos-7-pagina-artistas\.gitignore" />
+    <Resource Include="Imagenes\icon\carrito.png" />
+    <Resource Include="Imagenes\logo\LogoP.png" />
+    <Resource Include="Imagenes\icon\artistas.png" />
+    <Resource Include="Imagenes\icon\canciones.png" />
+    <Resource Include="Imagenes\icon\contacto.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IPO-Vinilos-7-pagina-artistas\IPO-Vinilos-7-pagina-artistas\TiendaVinilos\.vs\TiendaVinilos\FileContentIndex\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -13,5 +13,10 @@ namespace TiendaVinilos
     /// </summary>
     public partial class App : Application
     {
+        //public App()
+        //{
+        //    InitializeComponent();
+        //    MainWindowAdministrador = new NavigationPage( new MainWindowAdministrador);
+        //}
     }
 }

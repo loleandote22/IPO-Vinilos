@@ -1,0 +1,191 @@
+﻿<Window x:Class="TiendaVinilos.MainWindowAdministrador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TiendaVinilos"
+        mc:Ignorable="d"
+        Title="{Binding Titulo, UpdateSourceTrigger=PropertyChanged}"
+        d:DesignHeight="600" d:DesignWidth="1000"
+        WindowStartupLocation="CenterScreen">
+
+
+    <Window.Resources>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#AED6F1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Bodoni MT"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="-5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="#4b4d4d" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Logo-->
+                <Button>
+                    <Button.Content>
+                        <TextBlock Background="#4b4d4d">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Grid.Column="0"  Margin="20,10,0,10" Height="70" Source="Imagenes/logo/LogoP.png"/>
+                                    <Label FontFamily="lucky skirt" FontSize="40" Foreground="#EEEEEE" Content="VINILOS.SA" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+
+                <!--Idioma-->
+                <ComboBox x:Name="Language" DockPanel.Dock="Top"  VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.7" SelectedIndex="0" 
+                        Background="White" Height="30" MaxWidth="90" Width="70" Grid.Column="3" Margin="15">
+                    <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+                    <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+                </ComboBox>
+
+                <!--Uusario-->
+                <Button Grid.Column="4" Margin="15">
+                    <Button.Content>
+                        <TextBlock Background="#4b4d4d">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Imagenes/icon/usuario.png" Height="40"/>
+                            </StackPanel>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+
+                <!--Carrito-->
+                <Button Grid.Column="5" Margin="15">
+                    <Button.Content>
+                        <TextBlock Background="#4b4d4d">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Imagenes/icon/carrito.png" Height="40" Margin="0,0,30,0"/>
+                            </StackPanel>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <Grid Background="#000229" Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!--Menu Artistas-->
+                <Button Command="{Binding CommandArtistas}" >
+                    <Button.Content>
+                        <Border Background="#000229" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Imagenes/icon/artistas.png" Width="30"/>
+                                <Label Grid.Column="1" Content="Artistas" FontSize="20"/>
+                            </Grid>
+                        </Border>
+                    </Button.Content>
+                </Button>
+
+
+                <!--Menu Discos-->
+                <Button Grid.Column="1" Command="{Binding CommandDiscos}">
+                    <Button.Content>
+                        <Border Background="#000229" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Imagenes/icon/canciones.png" Width="30"/>
+                                <Label Grid.Column="1" Content="Discos" FontSize="20"/>
+                            </Grid>
+                        </Border>
+                    </Button.Content>
+                </Button>
+
+                <!--Menu Promociones-->
+                <Button Grid.Column="2" Command="{Binding CommandPromociones}">
+                    <Button.Content>
+                        <Border Background="#000229" Margin="-1">
+                            <Grid HorizontalAlignment="Center" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Imagenes/icon/promociones.png" Width="30"/>
+                                <Label Grid.Column="1" Content="Promociones" FontSize="20"/>
+                            </Grid>
+                        </Border>
+                    </Button.Content>
+                </Button>
+
+                <!--Menu Contacto-->
+                <Button Grid.Column="3" Command="{Binding CommandContacto}" >
+                    <Button.Content>
+                        <Border Background="#000229" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Imagenes/icon/contacto.png" Width="30"/>
+                                <Label Grid.Column="1" Content="Contacto" FontSize="20"/>
+                            </Grid>
+                        </Border>
+                    </Button.Content>
+                </Button>
+
+                <!--Menu Pedidos-->
+                <Button Grid.Column="4" >
+                    <Button.Content>
+                        <Border Background="#000229" Margin="-1">
+                            <Grid HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Imagenes/icon/pedidos.png" Width="30"/>
+                                <Label Grid.Column="1" Content="Pedidos" FontSize="20"/>
+                            </Grid>
+                        </Border>
+                    </Button.Content>
+                </Button>
+                <Frame Content="{Binding Pantalla, UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden" Navigated="Frame_Navigated"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
+
