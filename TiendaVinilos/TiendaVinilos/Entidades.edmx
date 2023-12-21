@@ -59,6 +59,7 @@
           <Property Name="criticos" Type="int" />
           <Property Name="unidades" Type="int" />
           <Property Name="idArtista" Type="int" />
+          <Property Name="precio" Type="float" />
         </EntityType>
         <EntityType Name="Duda">
           <Key>
@@ -115,7 +116,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
           </Key>
           <Property Name="idImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idDisco" Type="int" Nullable="false" />
-          <Property Name="enlace" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="enlace" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Integrante">
           <Key>
@@ -563,6 +564,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
           <Property Name="criticos" Type="Int32" />
           <Property Name="unidades" Type="Int32" />
           <Property Name="idArtista" Type="Int32" />
+          <Property Name="precio" Type="Double" />
           <NavigationProperty Name="Artista" Relationship="Self.FK_Disco_Artista" FromRole="Disco" ToRole="Artista" />
           <NavigationProperty Name="Cancion" Relationship="Self.FK_Cancion_Disco" FromRole="Disco" ToRole="Cancion" />
           <NavigationProperty Name="ComentarioDisco" Relationship="Self.FK_Table_1_Disco" FromRole="Disco" ToRole="ComentarioDisco" />
@@ -622,7 +624,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
           </Key>
           <Property Name="idImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idDisco" Type="Int32" Nullable="false" />
-          <Property Name="enlace" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Disco" Relationship="Self.FK_ImagenDisco_Disco" FromRole="ImagenDisco" ToRole="Disco" />
         </EntityType>
         <EntityType Name="Integrante">
@@ -929,7 +931,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="TiendaVinilosEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entidades" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Artista" EntityType="Self.Artista" />
           <EntitySet Name="Cancion" EntityType="Self.Cancion" />
           <EntitySet Name="ComentarioDisco" EntityType="Self.ComentarioDisco" />
@@ -1023,7 +1025,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TiendaVinilosModelStoreContainer" CdmEntityContainer="TiendaVinilosEntities">
+        <EntityContainerMapping StorageEntityContainer="TiendaVinilosModelStoreContainer" CdmEntityContainer="Entidades">
           <EntitySetMapping Name="Artista">
             <EntityTypeMapping TypeName="TiendaVinilosModel.Artista">
               <MappingFragment StoreEntitySet="Artista">
@@ -1081,6 +1083,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
                 <ScalarProperty Name="criticos" ColumnName="criticos" />
                 <ScalarProperty Name="unidades" ColumnName="unidades" />
                 <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
