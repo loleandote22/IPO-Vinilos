@@ -158,6 +158,9 @@
     <Compile Include="Presentación\Páginas\DiscosAdministradorPage.xaml.cs">
       <DependentUpon>DiscosAdministradorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\Páginas\DiscosClientePage.xaml.cs">
+      <DependentUpon>DiscosClientePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\Ventanas\MainWindowAdministrador.xaml.cs">
       <DependentUpon>MainWindowAdministrador.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,7 @@
       <DependentUpon>Entidades.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Administrador\ViewModelMain.cs" />
+    <Compile Include="ViewModel\Cliente\ViewModelDiscos.cs" />
     <Compile Include="ViewModel\ViewModelLogin.cs" />
     <Compile Include="ViewModel\Cliente\ViewModelArtistas.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -185,6 +189,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentación\Páginas\DiscosAdministradorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\Páginas\DiscosClientePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
