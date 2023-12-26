@@ -99,10 +99,6 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\LoginWindow.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowCliente.baml
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\ArtistaControl.g.cs
-<<<<<<< HEAD
-=======
-C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\ArtistasPage.g.cs
->>>>>>> main
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowAdministrador.g.cs
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\LoginWindow.g.cs
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowCliente.g.cs
