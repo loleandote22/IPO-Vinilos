@@ -111,3 +111,4 @@ C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\De
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\DiscosAdministradorPage.g.cs
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\ArtistasClientePage.baml
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\DiscosAdministradorPage.baml
+C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\ArtistasPage.baml
