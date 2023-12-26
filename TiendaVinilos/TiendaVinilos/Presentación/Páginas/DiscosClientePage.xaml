@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DiscosClientePage">
-
+    
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -18,11 +18,24 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Label Content=" Generos" Background="Gainsboro" BorderThickness="2,2,2,0" BorderBrush="Black" Margin="10,10,10,0"/>
-
-                <Border BorderThickness="2" BorderBrush="Black"  Grid.Row="1" Margin="10,0">
+                <Label Content="Generos" Style="{StaticResource labelFiltroCliente}"/>
+                <Border Style="{StaticResource borderFiltroCliente}" Grid.Row="1">
                     <ListView x:Name="Generos" BorderThickness="0"/>
+                </Border>
+
+                <Label Grid.Row="2" Style="{StaticResource labelFiltroCliente}" Content="Precio"/>
+                <Border Style="{StaticResource borderFiltroCliente}" Grid.Row="3">
+                    <ListView x:Name="Precios" BorderThickness="0"/>
+                </Border>
+
+                <Label Grid.Row="4" Style="{StaticResource labelFiltroCliente}" Content="Artistas"/>
+                <Border Style="{StaticResource borderFiltroCliente}" Grid.Row="5" >
+                    <ListView Name="Artistas" BorderThickness="0"/>
                 </Border>
             </Grid>
             <ListView Grid.Column="1" x:Name="Tabla" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0"  HorizontalContentAlignment="Center">

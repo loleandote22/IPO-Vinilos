@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Windows;
 using System.Windows.Input;
 using TiendaVinilos.Presentacion.Páginas;
+using TiendaVinilos.Presentación.Páginas;
 
 namespace TiendaVinilos.ViewModelCliente
 {
@@ -74,7 +75,11 @@ namespace TiendaVinilos.ViewModelCliente
             Pantalla = artistas;
             Titulo = "Atistas";
         }
-        private void verDiscos() { MessageBox.Show("Discos"); }
+        private void verDiscos() { DiscosClientePage discos = new DiscosClientePage();
+            //discos.DataContext = new ViewModelDiscos(discos, contexto);
+            Pantalla = discos;
+            Titulo = "Discos";
+        }
         private void verPromociones() { MessageBox.Show("Promociones"); }
         private void verContacto() { MessageBox.Show("Contacto"); }
         private void verCompra() { MessageBox.Show("Compra"); }

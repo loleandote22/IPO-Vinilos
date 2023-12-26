@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:TiendaVinilos"
              StartupUri="/Presentación/Ventanas/LoginWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="borderFiltroCliente" TargetType="Border">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="10,0"/>
+        </Style>
+        <Style x:Key="labelFiltroCliente" TargetType="Label">
+            <Setter Property="Background" Value="Gainsboro"/>
+            <Setter Property="BorderThickness" Value="2,2,2,0"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="10,10,10,0"/>
+        </Style>
     </Application.Resources>
 </Application>
