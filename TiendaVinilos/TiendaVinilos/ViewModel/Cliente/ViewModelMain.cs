@@ -25,7 +25,7 @@ namespace TiendaVinilos.ViewModelCliente
         private int elementosCarrito;
         private Object pantalla;
         private String titulo;
-        public TiendaVinilosEntities contexto = new TiendaVinilosEntities();
+        public Entidades contexto = new Entidades();
         // private 
         public ViewModelMain()
         {

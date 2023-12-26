@@ -63,6 +63,7 @@
     <Property Name="criticos" Type="Int32" />
     <Property Name="unidades" Type="Int32" />
     <Property Name="idArtista" Type="Int32" />
+    <Property Name="precio" Type="Double" />
     <NavigationProperty Name="Artista" Relationship="Self.FK_Disco_Artista" FromRole="Disco" ToRole="Artista" />
     <NavigationProperty Name="Cancion" Relationship="Self.FK_Cancion_Disco" FromRole="Disco" ToRole="Cancion" />
     <NavigationProperty Name="ComentarioDisco" Relationship="Self.FK_Table_1_Disco" FromRole="Disco" ToRole="ComentarioDisco" />
@@ -122,7 +123,7 @@
     </Key>
     <Property Name="idImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="idDisco" Type="Int32" Nullable="false" />
-    <Property Name="enlace" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="enlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Disco" Relationship="Self.FK_ImagenDisco_Disco" FromRole="ImagenDisco" ToRole="Disco" />
   </EntityType>
   <EntityType Name="Integrante">
@@ -429,7 +430,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="TiendaVinilosEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entidades" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Artista" EntityType="Self.Artista" />
     <EntitySet Name="Cancion" EntityType="Self.Cancion" />
     <EntitySet Name="ComentarioDisco" EntityType="Self.ComentarioDisco" />
