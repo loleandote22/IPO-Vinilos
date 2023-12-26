@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\App.xaml
+<<<<<<< HEAD
 61828288159
 22036306819
 36896028905
 241993625144
 Presentación\Controles\ArtistaControl.xaml;Presentación\Páginas\ArtistasClientePage.xaml;Presentación\Páginas\DiscosAdministradorPage.xaml;Presentación\Ventanas\MainWindowAdministrador.xaml;Presentación\Ventanas\LoginWindow.xaml;Presentación\Ventanas\MainWindowCliente.xaml;
+=======
+5-187612434
+22036306819
+33722971164
+241993625144
+Presentación\Controles\ArtistaControl.xaml;Presentación\Páginas\ArtistasPage.xaml;Presentación\Ventanas\MainWindowAdministrador.xaml;Presentación\Ventanas\LoginWindow.xaml;Presentación\Ventanas\MainWindowCliente.xaml;
+>>>>>>> main
 
-False
+True
 
