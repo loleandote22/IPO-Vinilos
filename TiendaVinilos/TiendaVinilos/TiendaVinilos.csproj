@@ -155,7 +155,7 @@
     <Compile Include="Presentación\Páginas\ArtistasClientePage.xaml.cs">
       <DependentUpon>ArtistasClientePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentación\Páginas\DiscosAdministradorPage.xaml.cs">
+    <Compile Include="Presentación\Páginas\Disco\DiscosAdministradorPage.xaml.cs">
       <DependentUpon>DiscosAdministradorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentación\Ventanas\MainWindowAdministrador.xaml.cs">
@@ -184,7 +184,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Presentación\Páginas\DiscosAdministradorPage.xaml">
+    <Page Include="Presentación\Páginas\Disco\DiscosAdministradorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -315,6 +315,7 @@
       <LastGenOutput>Entidades.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

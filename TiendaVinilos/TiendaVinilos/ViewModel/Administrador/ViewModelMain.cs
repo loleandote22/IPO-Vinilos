@@ -49,7 +49,7 @@ namespace TiendaVinilos.ViewModelAdministrador
             //Pantalla = artistas;
             //Titulo = "Atistas";
         }
-        private void verDiscos() { MessageBox.Show("Discos"); }
+        private void verDiscos() {  }
         private void verPromociones() { MessageBox.Show("Promociones"); }
         private void verContacto()
         {

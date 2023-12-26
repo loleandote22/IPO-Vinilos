@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TiendaVinilos.Presentación.Páginas
+namespace TiendaVinilos.Presentación.Páginas.Disco
 {
     /// <summary>
     /// Lógica de interacción para DiscosAdministradorPage.xaml
