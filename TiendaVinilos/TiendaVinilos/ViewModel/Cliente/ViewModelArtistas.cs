@@ -23,12 +23,12 @@ namespace TiendaVinilos.ViewModelCliente
         private ICommand verMasCommand;
         private ICommand verMenosCommand;
         // Se necesita cuando se acceda a un artista en concreto
-        private TiendaVinilosEntities contexto;
+        private Entidades contexto;
         public List<GeneroSeleccion> todosGeneros;
         private List<Artista> todosArtistas;
         private List<GeneroSeleccion> generosSeleccionados= new List<GeneroSeleccion>();
         private ListView panel;
-        public ViewModelArtistas(ArtistasPage artistasPage, TiendaVinilosEntities contexto) {
+        public ViewModelArtistas(ArtistasPage artistasPage, Entidades contexto) {
            Mouse.OverrideCursor= Cursors.Wait;
             this.contexto = contexto;
             this.artistasPage = artistasPage;

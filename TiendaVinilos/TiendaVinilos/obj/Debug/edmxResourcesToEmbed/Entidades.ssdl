@@ -54,6 +54,7 @@
     <Property Name="criticos" Type="int" />
     <Property Name="unidades" Type="int" />
     <Property Name="idArtista" Type="int" />
+    <Property Name="precio" Type="float" />
   </EntityType>
   <EntityType Name="Duda">
     <Key>
@@ -110,7 +111,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
     </Key>
     <Property Name="idImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idDisco" Type="int" Nullable="false" />
-    <Property Name="enlace" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="enlace" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Integrante">
     <Key>

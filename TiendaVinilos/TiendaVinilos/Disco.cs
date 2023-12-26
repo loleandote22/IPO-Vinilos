@@ -37,6 +37,7 @@ namespace TiendaVinilos
         public Nullable<int> criticos { get; set; }
         public Nullable<int> unidades { get; set; }
         public Nullable<int> idArtista { get; set; }
+        public Nullable<double> precio { get; set; }
     
         public virtual Artista Artista { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

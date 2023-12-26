@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="TiendaVinilosModelStoreContainer" CdmEntityContainer="TiendaVinilosEntities">
+  <EntityContainerMapping StorageEntityContainer="TiendaVinilosModelStoreContainer" CdmEntityContainer="Entidades">
     <EntitySetMapping Name="Artista">
       <EntityTypeMapping TypeName="TiendaVinilosModel.Artista">
         <MappingFragment StoreEntitySet="Artista">
@@ -58,6 +58,7 @@
           <ScalarProperty Name="criticos" ColumnName="criticos" />
           <ScalarProperty Name="unidades" ColumnName="unidades" />
           <ScalarProperty Name="idArtista" ColumnName="idArtista" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

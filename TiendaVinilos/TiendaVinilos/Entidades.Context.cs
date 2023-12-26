@@ -13,10 +13,10 @@ namespace TiendaVinilos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TiendaVinilosEntities : DbContext
+    public partial class Entidades : DbContext
     {
-        public TiendaVinilosEntities()
-            : base("name=TiendaVinilosEntities")
+        public Entidades()
+            : base("name=Entidades")
         {
         }
     

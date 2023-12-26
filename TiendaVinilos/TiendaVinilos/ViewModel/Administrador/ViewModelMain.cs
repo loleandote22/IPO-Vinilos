@@ -20,10 +20,11 @@ namespace TiendaVinilos.ViewModelAdministrador
         private ICommand commandContacto;
         private object pantalla;
         private String titulo;
-        public TiendaVinilosEntities contexto = new TiendaVinilosEntities();
+        public Entidades contexto;
 
-        public ViewModelMain()
+        public ViewModelMain(Entidades contexto)
         {
+            this.contexto = contexto;
             commandArtistas = new RelayCommand(new Action<object>((o) => verArtistas()));
             commandDiscos = new RelayCommand(new Action<object>((o) => verDiscos()));
             commandPromociones = new RelayCommand(new Action<object>((o) => verPromociones()));
