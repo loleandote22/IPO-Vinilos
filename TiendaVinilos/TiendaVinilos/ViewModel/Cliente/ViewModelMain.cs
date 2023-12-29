@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 using TiendaVinilos.Presentacion.Páginas;
 using TiendaVinilos.Presentación.Páginas;
+using TiendaVinilos.ViewModel.Cliente;
 
 namespace TiendaVinilos.ViewModelCliente
 {
@@ -27,9 +28,12 @@ namespace TiendaVinilos.ViewModelCliente
         private Object pantalla;
         private String titulo;
         public Entidades contexto = new Entidades();
+        private Usuario cliente;
         // private 
-        public ViewModelMain()
+        public ViewModelMain(Usuario cliente, Entidades entidades)
         {
+            this.cliente = cliente;
+            contexto = entidades;
             commandArtistas= new RelayCommand(new Action<object>((o) => verArtistas()));
             commandDiscos= new RelayCommand(new Action<object>((o) => verDiscos()));
             commandPromociones = new RelayCommand(new Action<object>((o) => verPromociones()));
@@ -41,6 +45,7 @@ namespace TiendaVinilos.ViewModelCliente
             IdiomaSeleccionado = listaIdiomas[0];
             Titulo = "Bienvenido";
             DateTime fecha = System.DateTime.Now;
+
         }
 
         public string Texto { get => texto;
@@ -76,7 +81,7 @@ namespace TiendaVinilos.ViewModelCliente
             Titulo = "Atistas";
         }
         private void verDiscos() { DiscosClientePage discos = new DiscosClientePage();
-            //discos.DataContext = new ViewModelDiscos(discos, contexto);
+            discos.DataContext = new ViewModelDiscos(discos, contexto, cliente);
             Pantalla = discos;
             Titulo = "Discos";
         }

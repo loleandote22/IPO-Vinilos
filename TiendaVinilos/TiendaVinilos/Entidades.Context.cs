@@ -37,6 +37,8 @@ namespace TiendaVinilos
         public virtual DbSet<ImagenDisco> ImagenDisco { get; set; }
         public virtual DbSet<Integrante> Integrante { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
+        public virtual DbSet<Promocion> Promocion { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tienda> Tienda { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<ElementoCesta> ElementoCesta { get; set; }

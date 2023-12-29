@@ -131,6 +131,26 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
     <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="sugerencia" Type="varchar" MaxLength="300" />
   </EntityType>
+  <EntityType Name="Promocion">
+    <Key>
+      <PropertyRef Name="idPromocion" />
+    </Key>
+    <Property Name="idPromocion" Type="int" Nullable="false" />
+    <Property Name="idDisco" Type="int" Nullable="false" />
+    <Property Name="descuento" Type="float" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaFin" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Tienda">
     <Key>
       <PropertyRef Name="idTienda" />
@@ -368,6 +388,18 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Promocion_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1" />
+    <End Role="Promocion" Type="Self.Promocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="Promocion">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Table_1_Disco">
     <End Role="Disco" Type="Self.Disco" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -409,6 +441,8 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
     <EntitySet Name="ImagenDisco" EntityType="Self.ImagenDisco" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Integrante" EntityType="Self.Integrante" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promocion" EntityType="Self.Promocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tienda" EntityType="Self.Tienda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ElementoCesta" EntityType="Self.ElementoCesta" store:Type="Tables" store:Schema="dbo">
@@ -481,6 +515,10 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
     <AssociationSet Name="FK_Pedido_Usuario" Association="Self.FK_Pedido_Usuario">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Promocion_Disco" Association="Self.FK_Promocion_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="Promocion" EntitySet="Promocion" />
     </AssociationSet>
     <AssociationSet Name="FK_Table_1_Disco" Association="Self.FK_Table_1_Disco">
       <End Role="Disco" EntitySet="Disco" />

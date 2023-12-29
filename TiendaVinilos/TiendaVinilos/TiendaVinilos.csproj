@@ -133,7 +133,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Entidades.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EntidadesAuxiliares\GeneroSeleccion.cs" />
+    <Compile Include="EntidadesAuxiliares\EntidadSeleccion.cs" />
     <Compile Include="Genero.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
     </Compile>
@@ -152,6 +152,9 @@
     <Compile Include="Presentación\Controles\ArtistaControl.xaml.cs">
       <DependentUpon>ArtistaControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\Controles\DiscoControl.xaml.cs">
+      <DependentUpon>DiscoControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\Páginas\ArtistasClientePage.xaml.cs">
       <DependentUpon>ArtistasClientePage.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,12 @@
     </Compile>
     <Compile Include="Presentación\Ventanas\MainWindowCliente.xaml.cs">
       <DependentUpon>MainWindowCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Promocion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
     </Compile>
     <Compile Include="Tienda.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
@@ -183,6 +192,14 @@
     <Page Include="Presentación\Controles\ArtistaControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentación\Controles\DiscoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\Estilos\EstiloCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentación\Páginas\ArtistasClientePage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -322,6 +339,8 @@
       <DependentUpon>Entidades.edmx</DependentUpon>
       <LastGenOutput>Entidades.cs</LastGenOutput>
     </Content>
+    <Resource Include="Presentación\IconosCliente\carrito-cliente.png" />
+    <Resource Include="Presentación\IconosCliente\deseo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

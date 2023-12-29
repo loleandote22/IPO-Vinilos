@@ -23,6 +23,7 @@ namespace TiendaVinilos
             this.ElementoPedido = new HashSet<ElementoPedido>();
             this.ElementoCesta = new HashSet<ElementoCesta>();
             this.ImagenDisco = new HashSet<ImagenDisco>();
+            this.Promocion = new HashSet<Promocion>();
         }
     
         public int idDisco { get; set; }
@@ -53,5 +54,7 @@ namespace TiendaVinilos
         public virtual ICollection<ElementoCesta> ElementoCesta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ImagenDisco> ImagenDisco { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Promocion> Promocion { get; set; }
     }
 }

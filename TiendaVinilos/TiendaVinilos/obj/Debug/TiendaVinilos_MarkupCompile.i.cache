@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\alfos\Desktop\Iasv2\IAV2\IPO-Vinilos\TiendaVinilos\TiendaVinilos\App.xaml
-71688836397
+9-785060306
 22036306819
-38-12061598
+41460123135
 241993625144
-Presentación\Controles\ArtistaControl.xaml;Presentación\Páginas\ArtistasClientePage.xaml;Presentación\Páginas\DiscosAdministradorPage.xaml;Presentación\Páginas\DiscosClientePage.xaml;Presentación\Ventanas\MainWindowAdministrador.xaml;Presentación\Ventanas\LoginWindow.xaml;Presentación\Ventanas\MainWindowCliente.xaml;
+Presentación\Controles\ArtistaControl.xaml;Presentación\Controles\DiscoControl.xaml;Presentación\Estilos\EstiloCliente.xaml;Presentación\Páginas\ArtistasClientePage.xaml;Presentación\Páginas\DiscosAdministradorPage.xaml;Presentación\Páginas\DiscosClientePage.xaml;Presentación\Ventanas\MainWindowAdministrador.xaml;Presentación\Ventanas\LoginWindow.xaml;Presentación\Ventanas\MainWindowCliente.xaml;
 
 True
 

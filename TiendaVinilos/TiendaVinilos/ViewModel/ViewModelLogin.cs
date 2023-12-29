@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using TiendaVinilos.ViewModelCliente;
 
 namespace TiendaVinilos
 {
@@ -37,7 +38,12 @@ namespace TiendaVinilos
                     if (usuario.tipo == "Administrador")
                         new MainWindowAdministrador().Show();
                     else
-                        new MainWindowCliente().Show();
+                    {
+                        MainWindowCliente ventana = new MainWindowCliente();
+                        ventana.DataContext = new ViewModelMain(usuario, contexto);
+                        ventana.Show();
+                    }
+                        
                     loginWindow.Close();
                 }
                 else

@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using TiendaVinilos.EntidadesAuxiliares;
 using TiendaVinilos.Presentacion;
 using TiendaVinilos.Presentacion.Páginas;
@@ -92,14 +87,26 @@ namespace TiendaVinilos.ViewModelCliente
             else
                 mostrarArtistas();
         }
-        public void mostrarArtistas()
+        private void mostrarArtistas()
         {
             foreach (Artista artista in todosArtistas)
             {
                 ArtistaControl artistaControl = new ArtistaControl();
+                artistaControl.MouseEnter += ArtistaControl_MouseEnter;
+                artistaControl.MouseLeave += ArtistaControl_MouseLeave;
                 artistaControl.DataContext = new ViewModelArtistaControl(artista);
                 panel.Items.Add(artistaControl);
             }
+        }
+
+        private void ArtistaControl_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine(((ArtistaControl)sender).Cursor = Cursors.Arrow);
+        }
+
+        private void ArtistaControl_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine(((ArtistaControl)sender).Cursor = Cursors.Hand);
         }
     }
     public class ViewModelArtistaControl : ViewModelBase

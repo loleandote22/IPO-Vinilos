@@ -5,10 +5,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:TiendaVinilos.Presentacion"
-    mc:Ignorable="d" Cursor="Hand" ForceCursor="True">
-    <Grid Cursor="Hand" ForceCursor="True">
+    mc:Ignorable="d">
+    <Grid>
 
-        <Button Padding="0" Width="200" Height="225" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}" Cursor="Hand">
+        <Button Padding="0" Width="200" Height="225" BorderThickness="0" BorderBrush="Transparent" Command="{Binding VerArtista}">
             <StackPanel Orientation="Vertical"  Width="200" Height="225" Background="White" Margin="-1" >
                 <Image  Source="{Binding ImagenArtista}" Height="150" Width="150" Margin=" 0,15,0,15"/>
                 <Label Content="{Binding Artista.nombre}" HorizontalContentAlignment="Center" FontSize="20" FontFamily="verdana"/>
