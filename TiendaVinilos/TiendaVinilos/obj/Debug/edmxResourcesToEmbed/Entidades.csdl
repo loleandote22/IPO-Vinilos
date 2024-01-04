@@ -72,6 +72,8 @@
     <NavigationProperty Name="ElementoPedido" Relationship="Self.FK_Elemento_Disco" FromRole="Disco" ToRole="ElementoPedido" />
     <NavigationProperty Name="ElementoCesta" Relationship="Self.FK_ElementoCesta_Disco" FromRole="Disco" ToRole="ElementoCesta" />
     <NavigationProperty Name="ImagenDisco" Relationship="Self.FK_ImagenDisco_Disco" FromRole="Disco" ToRole="ImagenDisco" />
+    <NavigationProperty Name="Promocion" Relationship="Self.FK_Promocion_Disco" FromRole="Disco" ToRole="Promocion" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Duda">
     <Key>
@@ -146,6 +148,27 @@
     <Property Name="sugerencia" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ElementoPedido" Relationship="Self.FK_ElementoPedido_Pedido" FromRole="Pedido" ToRole="ElementoPedido" />
     <NavigationProperty Name="Usuario" Relationship="Self.FK_Pedido_Usuario" FromRole="Pedido" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Promocion">
+    <Key>
+      <PropertyRef Name="idPromocion" />
+    </Key>
+    <Property Name="idPromocion" Type="Int32" Nullable="false" />
+    <Property Name="idDisco" Type="Int32" Nullable="false" />
+    <Property Name="descuento" Type="Double" Nullable="false" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaFin" Type="DateTime" Precision="3" Nullable="false" />
+    <NavigationProperty Name="Disco" Relationship="Self.FK_Promocion_Disco" FromRole="Promocion" ToRole="Disco" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Tienda">
     <Key>
@@ -364,6 +387,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Promocion_Disco">
+    <End Role="Disco" Type="Self.Disco" Multiplicity="1" />
+    <End Role="Promocion" Type="Self.Promocion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disco">
+        <PropertyRef Name="idDisco" />
+      </Principal>
+      <Dependent Role="Promocion">
+        <PropertyRef Name="idDisco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Duda_Admin">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
     <End Role="Duda" Type="Self.Duda" Multiplicity="*" />
@@ -443,6 +478,8 @@
     <EntitySet Name="ImagenDisco" EntityType="Self.ImagenDisco" />
     <EntitySet Name="Integrante" EntityType="Self.Integrante" />
     <EntitySet Name="Pedido" EntityType="Self.Pedido" />
+    <EntitySet Name="Promocion" EntityType="Self.Promocion" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Tienda" EntityType="Self.Tienda" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
     <EntitySet Name="ElementoCesta" EntityType="Self.ElementoCesta" />
@@ -497,6 +534,10 @@
     <AssociationSet Name="FK_ImagenDisco_Disco" Association="Self.FK_ImagenDisco_Disco">
       <End Role="Disco" EntitySet="Disco" />
       <End Role="ImagenDisco" EntitySet="ImagenDisco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Promocion_Disco" Association="Self.FK_Promocion_Disco">
+      <End Role="Disco" EntitySet="Disco" />
+      <End Role="Promocion" EntitySet="Promocion" />
     </AssociationSet>
     <AssociationSet Name="FK_Duda_Admin" Association="Self.FK_Duda_Admin">
       <End Role="Usuario" EntitySet="Usuario" />

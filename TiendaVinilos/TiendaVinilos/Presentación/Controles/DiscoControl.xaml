@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="TiendaVinilos.Presentación.Controles.DiscoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TiendaVinilos.Presentación.Controles"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Presentación/Estilos/EstiloDiscosCliente.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Button Style="{StaticResource botonGrande}"   Command="{Binding VerDisco}">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="150"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="DarkTurquoise" Height="150" Width="150" Margin="0,10" />
+            <Image  Source="{Binding ImagenDisco}" Height="150" Width="150" Margin=" 0,15"/>
+            <Label Grid.Row="1" Content="{Binding Disco.titulo}" HorizontalContentAlignment="Center" FontSize="16" FontFamily="verdana"/>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="{Binding Precio}" HorizontalContentAlignment="Center" FontSize="30" FontFamily="calibri"/>
+                    <Label Content="€" FontSize="30"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Visibility="{Binding VerPromocion, UpdateSourceTrigger=PropertyChanged}">
+                    <Label Content="Antes" FontSize="15"/>
+                    <Label Content="{Binding PrecioAntes}" FontSize="15"/>
+                    <Label Content="€" FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+            <Button Grid.Row="3" BorderThickness="0" Padding="0" Command="{Binding AnadirDeseoCommand}" Margin="0,10">
+                <StackPanel Width="200" Margin="0,-1" Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Presentación/IconosCliente/deseo.png"  Height="20"/>
+                        <Label Content="Lista de deseos" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <Button Grid.Row="4" Style="{StaticResource botonCompraDiscos}" Command="{Binding ComprarDiscoCommand}" Margin="0" Width="180">
+                <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+                    <Image Source="/Presentación/IconosCliente/carrito-cliente.png"  Width="20"/>
+                    <Label Foreground="White" Content="Añadir a la cesta" FontSize="16"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Button>
+</UserControl>

@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:TiendaVinilos"
              StartupUri="/Presentación/Ventanas/LoginWindow.xaml">
     <Application.Resources>
-         
+
+        
+      
     </Application.Resources>
 </Application>

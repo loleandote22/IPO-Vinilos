@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="Label">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="30"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="DarkGoldenrod"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+    <SolidColorBrush x:Key="Black" Color="#2C2C2C"/>
+    <SolidColorBrush x:Key="Oxford blue" Color="#14213D"/>
+    <SolidColorBrush x:Key="Orange" Color="#FCA311"/>
+    <SolidColorBrush x:Key="Platinum" Color="#E5E5E5"/>
+    <SolidColorBrush x:Key="White" Color="#fff"/>
+</ResourceDictionary>

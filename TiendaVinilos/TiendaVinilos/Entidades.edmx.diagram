@@ -4,22 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3feb6ec77e0a4ebab10a271f03cadb9f" Name="Diagram1">
-        <EntityTypeShape EntityType="TiendaVinilosModel.Artista" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Cancion" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ComentarioDisco" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Deseo" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Disco" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Duda" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ElementoPedido" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Genero" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ImagenArtista" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ImagenDisco" Width="1.5" PointX="7.5" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Integrante" Width="1.5" PointX="5.25" PointY="18.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Pedido" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+      <Diagram DiagramId="ee109b40f88b433e9f96241332e74e4b" Name="Diagram1">
+        <EntityTypeShape EntityType="TiendaVinilosModel.Artista" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Cancion" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.ComentarioDisco" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Deseo" Width="1.5" PointX="10.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Disco" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Duda" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.ElementoPedido" Width="1.5" PointX="10.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Genero" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.ImagenArtista" Width="1.5" PointX="5.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.ImagenDisco" Width="1.5" PointX="7.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Integrante" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Pedido" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Promocion" Width="1.5" PointX="7.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TiendaVinilosModel.Tienda" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Usuario" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ElementoCesta" Width="1.5" PointX="10.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.Usuario" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TiendaVinilosModel.ElementoCesta" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
         <AssociationConnector Association="TiendaVinilosModel.FK_Artista_Genero" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_Disco_Artista" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_ImagenArtista_Artista" ManuallyRouted="false" />
@@ -33,6 +35,7 @@
         <AssociationConnector Association="TiendaVinilosModel.FK_Elemento_Disco" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_ElementoCesta_Disco" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_ImagenDisco_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="TiendaVinilosModel.FK_Promocion_Disco" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_Duda_Admin" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_Duda_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="TiendaVinilosModel.FK_ElementoPedido_Pedido" ManuallyRouted="false" />

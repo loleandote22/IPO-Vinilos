@@ -18,9 +18,9 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Label Content=" Generos" Background="Gainsboro" BorderThickness="2,2,2,0" BorderBrush="Black" Margin="10,10,10,0"/>
+                <Label Content=" Generos" Style="{StaticResource labelFiltroCliente}"/>
 
-                <Border BorderThickness="2" BorderBrush="Black"  Grid.Row="1" Margin="10,0">
+                <Border BorderThickness="2" Style="{StaticResource borderFiltroCliente }"  Grid.Row="1">
                     <ListView x:Name="Generos" BorderThickness="0"/>
                 </Border>
             </Grid>
