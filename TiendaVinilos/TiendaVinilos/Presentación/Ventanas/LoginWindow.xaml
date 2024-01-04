@@ -8,7 +8,7 @@
         Title="login" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen">
 
-    
+
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"/>
@@ -16,77 +16,71 @@
             <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="Margin" Value="0,40,0,0"/>
         </Style>
-        <Style TargetType="Button">
-            
-        </Style>
     </Window.Resources>
-    <DockPanel >
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+    <Grid x:Name="panel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Column="0" Fill="#EEEEEE"/>
-            <Image Source="/Presentación/Imágenes/logoLogin.png" Height="250" Width="250" Grid.Column="0"/>
-            <Rectangle Grid.Column="1" Fill="#9e9e9e" Opacity="0.9"/>
+        <Rectangle Grid.Column="0" Fill="#EEEEEE"/>
+        <Image Source="/Presentación/Imágenes/logoLogin.png" Height="250" Width="250" Grid.Column="0"/>
+        <Rectangle Grid.Column="1" Fill="#9e9e9e" Opacity="0.9"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+            <StackPanel Width="250" Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                <!--Iniciar Sesion-->
+                <TextBlock Foreground="Black" Text="Iniciar Sesión" FontFamily="Bodoni MT" FontSize="40"  HorizontalAlignment="Center" FontWeight="Bold"/>
 
-                <StackPanel Width="250" Grid.Row="1" Grid.Column="1" Orientation="Vertical">
-                    <!--Iniciar Sesion-->
-                    <TextBlock Foreground="Black" Text="Iniciar Sesión" FontFamily="Bodoni MT" FontSize="40"  HorizontalAlignment="Center" FontWeight="Bold"/>
-
-                    <!--Nombre de usuario o correo electronico-->
-                    <TextBlock Text="Usuario"/>
-                    <TextBox  FontSize="14" FontWeight="Medium" FontFamily="Bodoni MT" CaretBrush="LightGray"  Text="{Binding Nombre, UpdateSourceTrigger=LostFocus}"
+                <!--Nombre de usuario o correo electronico-->
+                <TextBlock Text="Usuario"/>
+                <TextBox  FontSize="14" FontWeight="Medium" CaretBrush="LightGray"  Text="{Binding Nombre, UpdateSourceTrigger=LostFocus}"
                              BorderBrush="Black" BorderThickness="0,0,0,3" Height="27" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0" 
                              MaxLength="25">
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Presentación/Imágenes/user-icon.png" Stretch="None" AlignmentX="Left"/>
-                        </TextBox.Background>
-                    </TextBox>
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Presentación/Imágenes/user-icon.png" Stretch="None" AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
 
-                    <!--Contraseña-->
-                    <TextBlock Text="Contraseña"/>
-                    <PasswordBox Name="contaseña" FontSize="14"  FontWeight="Medium" FontFamily="Bodoni MT"   CaretBrush="pink"  
+                <!--Contraseña-->
+                <TextBlock Text="Contraseña"/>
+                <PasswordBox Name="contaseña" FontSize="14"  FontWeight="Medium" FontFamily="Bodoni MT"   CaretBrush="pink"  
                              BorderBrush="Black" BorderThickness="0,0,0,3" Height="27" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Presentación/Imágenes/key-icon.png" Stretch="None" AlignmentX="Left"/>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                    <PasswordBox.Background>
+                        <ImageBrush ImageSource="/Presentación/Imágenes/key-icon.png" Stretch="None" AlignmentX="Left"/>
+                    </PasswordBox.Background>
+                </PasswordBox>
 
-                    <!--Boton de iniciar sesion-->
-                    <Button x:Name="btnLogin"  BorderThickness="0" Content="Entrar" Foreground="White" FontSize="20" FontFamily="Bodoni MT" Cursor="Hand"                           
+                <!--Boton de iniciar sesion-->
+                <Button x:Name="btnLogin"  BorderThickness="0" Content="Entrar" Foreground="White" FontSize="20" FontFamily="Bodoni MT" Cursor="Hand"                           
                             Margin="0,50,0,0" Command="{Binding AccederCommand}">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="Black"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="LightGray"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="40"
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Black"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
                                         CornerRadius="20"
                                         Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-            </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
         </Grid>
-    </DockPanel>
+    </Grid>
 </Window>

@@ -127,3 +127,7 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\LoadingControl.g.cs
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\LoadingControl.baml
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\TarjetaBienvenidaWindow.g.cs
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\TarjetaBienvenidaWindow.baml

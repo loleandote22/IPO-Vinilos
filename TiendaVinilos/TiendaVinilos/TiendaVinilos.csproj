@@ -160,6 +160,9 @@
     <Compile Include="Presentación\Controles\DiscoControl.xaml.cs">
       <DependentUpon>DiscoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\Controles\LoadingControl.xaml.cs">
+      <DependentUpon>LoadingControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\Páginas\ArtistasClientePage.xaml.cs">
       <DependentUpon>ArtistasClientePage.xaml</DependentUpon>
     </Compile>
@@ -177,6 +180,9 @@
     </Compile>
     <Compile Include="Presentación\Ventanas\MainWindowCliente.xaml.cs">
       <DependentUpon>MainWindowCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Ventanas\TarjetaBienvenidaWindow.xaml.cs">
+      <DependentUpon>TarjetaBienvenidaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Promocion.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
@@ -202,6 +208,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentación\Controles\DiscoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\Controles\LoadingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,6 +266,10 @@
     <Page Include="Presentación\Ventanas\MainWindowCliente.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentación\Ventanas\TarjetaBienvenidaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
