@@ -1,0 +1,110 @@
+﻿<Page x:Class="TiendaVinilos.Presentación.Páginas.Discos.DiscoClientePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TiendaVinilos.Presentación.Páginas.Discos"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="800"
+      Title="DiscoClientePage">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Presentación/IconosCliente/vectorDiscoCliente.xaml" />
+                <ResourceDictionary Source="/Presentación/Estilos/EstiloDiscosCliente.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="50,0" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image  Width="250" Source="{Binding Disco.portada}" Height="250" Margin="50,50,0,20" Grid.RowSpan="2"/>
+            <StackPanel x:Name="imagenes" Orientation="Horizontal" Margin="50,0" Height="100" Grid.Row="2"/>
+            <StackPanel Grid.Column="1"  Grid.RowSpan="2" HorizontalAlignment="Left" Margin=" 20,50">
+                <Label Content="{Binding Disco.titulo}" HorizontalAlignment="Left" FontSize="36" />
+                <TextBlock  HorizontalAlignment="Left" Text="{Binding Disco.descripcion}" FontSize="20" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3">
+                <Label Margin="10,0" FontSize="25" VerticalAlignment="Center" Content="{Binding Likes, UpdateSourceTrigger=PropertyChanged}"/>
+                <Image Source="{StaticResource like}"/>
+                <Label Margin="10,0" FontSize="25" VerticalAlignment="Center" Content="{Binding Dislikes, UpdateSourceTrigger=PropertyChanged}"/>
+                <Image Source="{StaticResource dislike}" RenderTransformOrigin="0.5,1">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <TranslateTransform Y="-20"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+            </StackPanel>
+            <Grid Grid.Row="4" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="50" Margin="10,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{StaticResource checkDisco}" />
+                <Label VerticalAlignment="Center" FontSize="20" Grid.Column="1" Margin="10,0,20,0" Content="Devolución fácil y gratuita"/>
+                <Image Grid.Column="2" Source="{StaticResource tiendaDisco}"/>
+                <Label VerticalAlignment="Center" FontSize="20" Margin="0,0,20,0" Grid.Column="3" Content="Pago seguro"/>
+                <Image Grid.Column="4" Source="{StaticResource camionDisco}"/>
+                <Label VerticalAlignment="Center" FontSize="20" Margin="10,0" Grid.Column="5" Content="Entrega en 1H en tienda"/>
+            </Grid>
+            <Border Grid.Column="3" BorderThickness="3" BorderBrush="Black" CornerRadius="10" Margin="0,50" Grid.RowSpan="4">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                        <Label Content="{Binding Precio}" FontSize="30"/>
+                        <Label Content="€" FontSize="30"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Quedan" FontSize="16"/>
+                        <Label Content="{Binding Unidades}" FontSize="16"/>
+                        <Label Content="unidades" FontSize="16"/>
+                    </StackPanel>
+                    <Line StrokeThickness="2" X1="30" X2="200" Stroke="Black" Stretch="Fill"  Margin="30,0"/>
+                    <Label Content="Págalo a plazos desde 37,00 €" HorizontalAlignment="Center"  FontSize="16" Foreground="MediumVioletRed" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="{StaticResource camion}"/>
+                        <Label Content="Entrega a domicilio" FontSize="20" FontWeight="Bold"/>
+                    </StackPanel>
+                    <TextBlock Text="Entrega más rápida el viernes, 3 de noviembre. Haz el pedido en 21 horas 40 mins." FontSize="20" HorizontalAlignment="Center" Margin="50,30" TextWrapping="WrapWithOverflow"/>
+                    <Button Style="{StaticResource botonClic}" Margin="50,20" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource carrito}"/>
+                            <Label Content="Comprar en un clic" Foreground="White" FontWeight="Bold" FontSize="18"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource botonCesta}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource carritoCesta}"/>
+                            <Label Content="Añadir a la cesta" Foreground="White" FontWeight="Bold" FontSize="18"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+            <Separator Grid.ColumnSpan="2" Grid.Row="5"/>
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Content="Opiniones" Margin=" 0,0,20,0" FontSize="26"/>
+                <Label Content="{Binding Opiniones}" FontSize="26"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

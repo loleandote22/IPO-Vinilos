@@ -133,6 +133,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Entidades.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entidades1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntidadesAuxiliares\EntidadSeleccion.cs" />
     <Compile Include="Genero.cs">
       <DependentUpon>Entidades.tt</DependentUpon>
@@ -161,7 +166,10 @@
     <Compile Include="Presentación\Páginas\DiscosAdministradorPage.xaml.cs">
       <DependentUpon>DiscosAdministradorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentación\Páginas\DiscosClientePage.xaml.cs">
+    <Compile Include="Presentación\Páginas\Discos\DiscoClientePage.xaml.cs">
+      <DependentUpon>DiscoClientePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\Páginas\Discos\DiscosClientePage.xaml.cs">
       <DependentUpon>DiscosClientePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentación\Ventanas\MainWindowAdministrador.xaml.cs">
@@ -197,7 +205,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentación\Estilos\EstiloCliente.xaml">
+    <Page Include="Presentación\Estilos\EstiloDiscosCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\Estilos\EstiloPrincipalCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\IconosCliente\vectorDiscoCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\IconosCliente\vectorPrincipalCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,7 +229,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentación\Páginas\DiscosClientePage.xaml">
+    <Page Include="Presentación\Páginas\Discos\DiscoClientePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentación\Páginas\Discos\DiscosClientePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -317,12 +341,7 @@
     <Resource Include="Presentación\Imágenes\Imagen_no_disponible.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Presentación\IconosCliente\bolso-shopping-cuadrado-con-asa.png" />
-    <Resource Include="Presentación\IconosCliente\casa.png" />
     <Resource Include="Presentación\IconosCliente\comunicar.png" />
-    <Resource Include="Presentación\IconosCliente\gran-venta.png" />
-    <Resource Include="Presentación\IconosCliente\guitarrista.png" />
-    <Resource Include="Presentación\IconosCliente\usuario.png" />
     <Resource Include="Presentación\IconosCliente\vinilo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -337,9 +356,8 @@
     <Content Include="Entidades.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Entidades.edmx</DependentUpon>
-      <LastGenOutput>Entidades.cs</LastGenOutput>
+      <LastGenOutput>Entidades1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Presentación\IconosCliente\carrito-cliente.png" />
     <Resource Include="Presentación\IconosCliente\deseo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

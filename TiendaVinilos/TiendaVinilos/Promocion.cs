@@ -18,7 +18,7 @@ namespace TiendaVinilos
         public int idDisco { get; set; }
         public double descuento { get; set; }
         public System.DateTime fechaInicio { get; set; }
-        public Nullable<System.DateTime> fechaFin { get; set; }
+        public System.DateTime fechaFin { get; set; }
     
         public virtual Disco Disco { get; set; }
     }

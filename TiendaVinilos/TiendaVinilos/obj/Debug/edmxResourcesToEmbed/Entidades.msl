@@ -46,6 +46,7 @@
     <EntitySetMapping Name="Disco">
       <EntityTypeMapping TypeName="TiendaVinilosModel.Disco">
         <MappingFragment StoreEntitySet="Disco">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="idDisco" ColumnName="idDisco" />
           <ScalarProperty Name="titulo" ColumnName="titulo" />
           <ScalarProperty Name="portada" ColumnName="portada" />

@@ -7,37 +7,58 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows;
 using TiendaVinilos.Presentación.Controles;
+using System.Configuration;
+using TiendaVinilos.ViewModelCliente;
+using TiendaVinilos.Presentación.Páginas.Discos;
+using System.Threading;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 
 
 namespace TiendaVinilos.ViewModel.Cliente
 {
-    internal class ViewModelDiscos
+    public class ViewModelDiscos: ViewModelBase
     {
         private Entidades contexto;
         private DiscosClientePage pagina;
-        private Usuario cliente;
-        private List<GeneroSeleccion> todosGeneros;
-
-        internal List<GeneroSeleccion> TodosGeneros { get => todosGeneros; set => todosGeneros = value; }
+        public Usuario cliente;
 
         private List<int> generosSeleccionados = new List<int>();
-        private List<int> artistasSeleccionados = new List<int> { };
-        private ListView panel;
+        private List<int> artistasSeleccionados = new List<int>();
+        private List<GeneroSeleccion> todosGeneros;
+        private List<ArtistaSeleccion> todosArtistas;
         private List<Disco> discos;
         private List<string> rangoPrecios = new List<string> { "- 50 €", "50 - 100 €", "+ 100 €" };
+        private Grid panel;
         private int menor = 0;
         private int mayor = int.MaxValue;
-        public List<ArtistaSeleccion> todosArtistas;
-        public ViewModelDiscos(DiscosClientePage pagina, Entidades contexto, Usuario cliente)
+        private int paginaActual;
+        private int totalPaginas;
+        private int estadoBarra;
+        private string mensaje;
+        private bool deseoActivo;
+        private Visibility verBotonIzq;
+        private Visibility verBotonDech;
+        private Visibility verPopUp;
+        private Visibility verCorrecto;
+        private Visibility verInfo;
+        private ICommand verPaginaIzqCommand;
+        private ICommand verPaginaDechCommand;
+        public ViewModelMain ViewModelMain;
+        public ViewModelDiscos(DiscosClientePage pagina,ViewModelMain viewModelMain, Entidades contexto, Usuario cliente)
         {
             this.pagina = pagina;
             this.contexto = contexto;
             this.cliente = cliente;
+            ViewModelMain= viewModelMain;
             todosGeneros = (from g in contexto.Genero select new GeneroSeleccion() { Genero = g }).ToList();
             todosArtistas = (from a in contexto.Artista select new ArtistaSeleccion() { Artista = a}).ToList();
             panel = this.pagina.Tabla;
-            foreach (GeneroSeleccion generoSeleccion in TodosGeneros)
+           
+            foreach (GeneroSeleccion generoSeleccion in todosGeneros)
             {
                 var check = new CheckBox();
                 check.Content = generoSeleccion.Genero.nombre;
@@ -67,14 +88,40 @@ namespace TiendaVinilos.ViewModel.Cliente
             }
 
             discos = (from d in contexto.Disco select d).ToList();
-            //var presio = discos.First().Promocion.First().descuento;
+            verBotonIzq = Visibility.Collapsed;
+            if (discos.Count < 21)
+                verBotonDech = Visibility.Collapsed;
+            VerPaginaIzqCommand = new RelayCommand(new Action<object>((o) => VerPaginaIzq()));
+            VerPaginaDechCommand = new RelayCommand(new Action<object>((o) => VerPaginaDech()));
+            PaginaActual = 1;
+            double elementos = discos.Count / 20.0;
+            totalPaginas = Convert.ToInt32(Math.Ceiling(elementos));
+            verPopUp = Visibility.Collapsed;
+            DeseoActivo = true;
             mostrarDiscos();
         }
+        public Visibility VerBotonIzq { get => verBotonIzq; set { verBotonIzq = value; OnPropertyChanged("VerBotonIzq"); } }
+        public Visibility VerBotonDech { get => verBotonDech; set { verBotonDech = value; OnPropertyChanged("VerBotonDech"); } }
+        public Visibility VerPopUp { get => verPopUp; set { verPopUp = value; OnPropertyChanged("VerPopUp"); } }
+        public Visibility VerCorrecto { get => verCorrecto; set { verCorrecto = value; OnPropertyChanged("VerCorrecto"); } }
+        public Visibility VerInfo { get => verInfo; set { verInfo = value; OnPropertyChanged("VerInfo");}
+}
+
+        public ICommand VerPaginaIzqCommand { get => verPaginaIzqCommand; set { verPaginaIzqCommand = value;OnPropertyChanged("VerPaginaIzqCommand"); }  }
+        public ICommand VerPaginaDechCommand { get => verPaginaDechCommand; set { verPaginaDechCommand = value; OnPropertyChanged("VerPaginaDechCommand"); } }
+        public int PaginaActual { get => paginaActual; set { paginaActual = value; OnPropertyChanged("PaginaActual"); } }
+
+        public int TotalPaginas { get => totalPaginas; set { totalPaginas = value; OnPropertyChanged("TotalPaginas"); } }
+        public int EstadoBarra { get => estadoBarra; set { estadoBarra = value; OnPropertyChanged("EstadoBarra"); } }
+
+
+        public string Mensaje { get => mensaje; set { mensaje = value; OnPropertyChanged("Mensaje"); } }
+
+        public bool DeseoActivo { get => deseoActivo; set { deseoActivo = value; OnPropertyChanged("DeseoActivo"); } }
 
         private void RadButton_Checked(object sender, RoutedEventArgs e)
         {
             int posicion = rangoPrecios.IndexOf(((RadioButton)sender).Content.ToString());
-            
             var texto = rangoPrecios[posicion];
             switch (posicion)
             {
@@ -101,12 +148,13 @@ namespace TiendaVinilos.ViewModel.Cliente
                     mayor = int.MaxValue;
                     break;
             }
+            PaginaActual = 1;
             mostrarDiscos();
-            //discos = (from d in contexto.Disco where d.precio>=menor && d.precio<=mayor select d).ToList();
         }
 
         private void mostrarDiscos() {
-            panel.Items.Clear();
+            panel.RowDefinitions.Clear();
+            panel.Children.Clear();
             List<Disco> discos;
             if (generosSeleccionados.Count > 0)
                 discos = (from d in contexto.Disco from g in generosSeleccionados where d.idGenero == g && d.precio >= menor && d.precio <= mayor select d).ToList();
@@ -114,13 +162,27 @@ namespace TiendaVinilos.ViewModel.Cliente
                 discos = (from d in contexto.Disco where d.precio >= menor && d.precio <= mayor select d).ToList();
             if (artistasSeleccionados.Count > 0)
                 discos = (from d in discos from a in artistasSeleccionados where d.idArtista == a select d).ToList();
-            foreach (var disc in discos)
+            if(discos.Count > 0)
+            for(int k = 0; k < 39; k++)
+            {
+                discos.Add(discos[k]);
+            }
+            double elementos = discos.Count / 20.0;
+            TotalPaginas = Convert.ToInt32(Math.Ceiling(elementos));
+            if (totalPaginas == 0)
+                TotalPaginas++;
+            discos = discos.Skip((paginaActual-1) * 20).Take(20).ToList();
+                for (int posicion =0;posicion<discos.Count;posicion++)
                 {
                     DiscoControl discoControl = new DiscoControl();
                     discoControl.MouseEnter += DiscoControl_MouseEnter;
                     discoControl.MouseLeave += DiscoControl_MouseLeave;
-                    discoControl.DataContext = new ViewModelDiscoControl(disc);
-                    panel.Items.Add(discoControl);
+                    discoControl.DataContext = new ViewModelDiscoControl(discos[posicion], this);
+                    Grid.SetColumn(discoControl, posicion%5);
+                    Grid.SetRow(discoControl, posicion / 5);
+                    if (posicion % 5 == 0)
+                        panel.RowDefinitions.Add(new RowDefinition() { Height=new GridLength(400)});
+                    panel.Children.Add(discoControl);
                 }
         }
 
@@ -140,15 +202,50 @@ namespace TiendaVinilos.ViewModel.Cliente
             GeneroSeleccion seleccionado = (from s in todosGeneros where s.Genero.nombre == genero select s).First();
             seleccionado.Seleccionado = true;
             generosSeleccionados.Add(seleccionado.Genero.idGenero);
-            //panel.Items.Clear();
+            paginaActual = 1;
+            estadoBarra = 0;
+          
             mostrarDiscos();
         }
+
+        public void barraPopup()
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += actualizarBarra;
+            worker.ProgressChanged += actualizacion;
+            worker.RunWorkerAsync();
+        }
+
+        private void actualizarBarra(object sender, EventArgs e)
+        {
+            DeseoActivo = false;
+            for (int i = 0; i < 500; i++)
+            {
+                (sender as BackgroundWorker).ReportProgress(i);
+                Thread.Sleep(10);
+            }
+
+            (sender as BackgroundWorker).ReportProgress(-1);
+            DeseoActivo = true;
+        }
+
+        private void actualizacion(object sender, ProgressChangedEventArgs e)
+        {
+            if (e.ProgressPercentage >= 0)
+                EstadoBarra = e.ProgressPercentage;
+            else { EstadoBarra = 0; VerPopUp = Visibility.Collapsed; }
+            
+        }
+
+
         private void generouncheckeado(object sender, EventArgs e)
         {
             string genero = ((CheckBox)sender).Content.ToString();
             GeneroSeleccion seleccionado = (from s in todosGeneros where s.Genero.nombre == genero select s).First();
             seleccionado.Seleccionado = false;
             generosSeleccionados.Remove(seleccionado.Genero.idGenero);
+            paginaActual = 1;
             mostrarDiscos();
         }
         private void artistacheckeado(object sender, EventArgs e) {
@@ -156,6 +253,7 @@ namespace TiendaVinilos.ViewModel.Cliente
             ArtistaSeleccion seleccionado = (from s in todosArtistas where s.Artista.nombre == artista select s).First();
             seleccionado.Seleccionado = true;
             artistasSeleccionados.Add(seleccionado.Artista.idArtista);
+            paginaActual = 1;
             mostrarDiscos();
 
         }
@@ -164,7 +262,35 @@ namespace TiendaVinilos.ViewModel.Cliente
             ArtistaSeleccion seleccionado = (from s in todosArtistas where s.Artista.nombre == artista select s).First();
             seleccionado.Seleccionado = false;
             artistasSeleccionados.Remove(seleccionado.Artista.idArtista);
+            paginaActual = 1;
             mostrarDiscos();
+        }
+        
+        private void VerPaginaIzq()
+        {
+            PaginaActual--;
+            if (PaginaActual == 1)
+                VerBotonIzq = Visibility.Collapsed;
+            mostrarDiscos();
+        }
+        private void VerPaginaDech() {
+            PaginaActual++;
+            if (PaginaActual>= TotalPaginas)
+                VerBotonDech = Visibility.Collapsed;
+            mostrarDiscos();
+        }
+        public void noDeseado()
+        {
+
+            VerCorrecto = Visibility.Visible;
+            VerInfo = Visibility.Collapsed;
+            Mensaje = "Disco añadido a la lista de deseos";
+        }
+        public void yaDeseado()
+        {
+            VerInfo = Visibility.Visible;
+            VerCorrecto = Visibility.Collapsed;
+            Mensaje = "El disco ya estaba en tu lista de deseos";
         }
     }
    
@@ -176,20 +302,29 @@ namespace TiendaVinilos.ViewModel.Cliente
         private Disco disco;
         private string imagenDisco;
         private double precio;
-        public ViewModelDiscoControl(Disco Disco)
+        private double precioAntes;
+        private ViewModelDiscos viewModel;
+        private Visibility verPromocion;
+
+        public ViewModelDiscoControl(Disco Disco, ViewModelDiscos viewModel)
         {
+            this.viewModel = viewModel;
             disco = Disco;
-            var imagen = disco.ImagenDisco.FirstOrDefault();
+            var imagen = disco.portada;
             if (imagen != null)
-                imagenDisco = imagen.enlace;
+                imagenDisco = imagen;
             if (imagenDisco == null)
                 imagenDisco = "/Presentación/Imágenes/Imagen_no_disponible.png";
-            else Console.WriteLine(imagenDisco);
-            var descuento = (from p in disco.Promocion select p).FirstOrDefault();
-            double cantidad = 100;
+            var descuento = (from p in disco.Promocion where p.fechaInicio<= DateTime.Now && p.fechaFin>=DateTime.Now select p).FirstOrDefault();
+            double cantidad = 0;
             if (descuento != null)
+            {
                 cantidad = descuento.descuento;
-            precio = disco.precio.Value * cantidad/100;
+                VerPromocion= Visibility.Visible;
+                PrecioAntes = disco.precio.Value;
+            }else
+                VerPromocion= Visibility.Collapsed;
+            precio = disco.precio.Value * (100-cantidad)/100;
             VerDisco = new RelayCommand(new Action<object>((o) => mostrarDisco()));
             ComprarDiscoCommand = new RelayCommand(new Action<object>((o)=> comprarDisco()));
             AnadirDeseoCommand = new RelayCommand(new Action<object>((o)=> annadirDeseo()));
@@ -201,19 +336,99 @@ namespace TiendaVinilos.ViewModel.Cliente
         public ICommand AnadirDeseoCommand { get => anadirDeseoCommand; set => anadirDeseoCommand = value; }
         public string ImagenDisco { get => imagenDisco; set => imagenDisco = value; }
         public double Precio { get => precio; set => precio = value; }
+        public Visibility VerPromocion { get => verPromocion; set { verPromocion = value; OnPropertyChanged("VerPromocion"); } }
+        public double PrecioAntes { get => precioAntes; set { precioAntes = value; OnPropertyChanged("PrecioAntes"); } }
 
         private void mostrarDisco()
         {
-            // Mostrar página del disco seleccionado
-            MessageBox.Show(disco.titulo);
+            DiscoClientePage pagina= new DiscoClientePage();
+            pagina.DataContext = new ViewModelDisco(pagina, viewModel, disco);
+            viewModel.ViewModelMain.cambiarPantalla(pagina, disco.titulo);
         }
         private void comprarDisco()
         {
-            //Mandar al formulario de compra con los discos de la cesta
+            Console.WriteLine("Hola mi amor");
         }
         private void annadirDeseo()
         {
-            //Mostrar mensaje afirmando que se ha añadido
+            if (viewModel.DeseoActivo)
+            {
+                Entidades contexto = viewModel.ViewModelMain.contexto;
+                bool deseado = (from d in contexto.Deseo where d.idUsuario == viewModel.cliente.idUsuario && d.idDisco == disco.idDisco select d).Count() > 0;
+                if (!deseado)
+                {
+                    contexto.Deseo.Add(new Deseo() { idDisco = disco.idDisco, idUsuario = viewModel.cliente.idUsuario });
+                    contexto.SaveChanges();
+                    viewModel.noDeseado();
+                }
+                else
+                {
+                    viewModel.yaDeseado();
+                }
+                viewModel.VerPopUp = Visibility.Visible;
+                viewModel.barraPopup();
+            }
         }
     }
+    public class ViewModelDisco: ViewModelBase
+    {
+        private DiscoClientePage pagina;
+        private ViewModelDiscos viewModel;
+        private string imagen;
+        private Disco disco;
+        private int likes;
+        private int dislikes;
+        private int unidades;
+        private double precio;
+        private ICommand likeCommand;
+        private ICommand dislikeCommand;
+        public ViewModelDisco(DiscoClientePage pagina, ViewModelDiscos viewModel, Disco disco)
+        {
+            this.pagina= pagina;
+            this.viewModel= viewModel;
+            Disco= disco;
+            imagen = disco.portada;
+            Image image = new Image();
+            BitmapImage myBitmapImage = new BitmapImage();
+            myBitmapImage.BeginInit();
+            myBitmapImage.UriSource = new Uri(disco.portada);
+            myBitmapImage.EndInit();
+            image.Source = myBitmapImage;
+            image.Height = 100;
+            image.Margin = new Thickness(10, 0, 10, 0);
+            pagina.imagenes.Children.Add(image);
+            Unidades = disco.unidades.GetValueOrDefault();
+            double cantidad = 0;
+            if (disco.Promocion.Count > 0)
+            {
+                var descuento = (from p in disco.Promocion where p.fechaInicio >= DateTime.Now && p.fechaFin <= DateTime.Now select p).FirstOrDefault();
+                cantidad = disco.Promocion.First().descuento;
+            }
+            Precio = disco.precio.Value * (100 - cantidad) / 100;
+            foreach (ImagenDisco imagen in disco.ImagenDisco.ToList())
+            {
+                image = new Image();
+                myBitmapImage = new BitmapImage();
+                myBitmapImage.BeginInit();
+                myBitmapImage.UriSource = new Uri(imagen.enlace);
+                myBitmapImage.EndInit();
+                image.Source = myBitmapImage;
+                image.Height = 100;
+                image.Margin = new Thickness(10,0,10,0);
+                pagina.imagenes.Children.Add(image);
+            }
+            Likes = disco.favoritos.GetValueOrDefault();
+            Dislikes = disco.criticos.GetValueOrDefault();
+        }
+
+        public Disco Disco { get => disco; set => disco = value; }
+        public string Imagen { get => imagen; set => imagen = value; }
+        public int Likes { get => likes; set { likes = value; OnPropertyChanged("Likes"); } }
+        public int Dislikes { get => dislikes; set { dislikes = value; OnPropertyChanged("Dislikes"); } }
+        public int Unidades { get => unidades; set { unidades = value; OnPropertyChanged("Unidades"); } }
+        public double Precio { get => precio; set { precio = value; OnPropertyChanged("Precio"); } }
+        public ICommand LikeCommand { get => likeCommand; set => likeCommand = value; }
+        public ICommand DislikeCommand { get => dislikeCommand; set => dislikeCommand = value; }
+    }
+
 }

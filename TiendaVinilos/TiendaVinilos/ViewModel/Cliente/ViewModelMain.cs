@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using TiendaVinilos.Presentacion.Páginas;
 using TiendaVinilos.Presentación.Páginas;
@@ -12,10 +12,10 @@ using TiendaVinilos.ViewModel.Cliente;
 
 namespace TiendaVinilos.ViewModelCliente
 {
-    internal class ViewModelMain: ViewModelBase
+    public class ViewModelMain: ViewModelBase
     {
-        private String texto;
-        private String idiomaSeleccionado;
+        private string texto;
+        private string idiomaSeleccionado;
         private ICommand commandArtistas;
         private ICommand commandDiscos;
         private ICommand commandPromociones;
@@ -23,13 +23,12 @@ namespace TiendaVinilos.ViewModelCliente
         private ICommand commandCompra;
         private ICommand usuarioCommand;
         private ICommand inicioCommand;
-        private List<String> listaIdiomas = new List<string> { "Español", "Inglés" };
+        private List<string> listaIdiomas = new List<string> { "Español", "Inglés" };
         private int elementosCarrito;
-        private Object pantalla;
-        private String titulo;
+        private Page pantalla;
+        private string titulo;
         public Entidades contexto = new Entidades();
-        private Usuario cliente;
-        // private 
+        private Usuario cliente; 
         public ViewModelMain(Usuario cliente, Entidades entidades)
         {
             this.cliente = cliente;
@@ -67,8 +66,8 @@ namespace TiendaVinilos.ViewModelCliente
         public ICommand UsuarioCommand { get => usuarioCommand; set => usuarioCommand = value; }
         public ICommand InicioCommand { get => inicioCommand; set => inicioCommand = value; }
         public int ElementosCarrito { get => elementosCarrito; set { elementosCarrito = value;OnPropertyChanged("ElementosCarrito"); } }
-        public String Titulo { get => titulo;set { titulo = value; ;OnPropertyChanged("Titulo"); } }
-        public Object Pantalla { get => pantalla; set {
+        public string Titulo { get => titulo;set { titulo = value; ;OnPropertyChanged("Titulo"); } }
+        public Page Pantalla { get => pantalla; set {
                 pantalla = value;
                 OnPropertyChanged("Pantalla");
             } }
@@ -77,18 +76,22 @@ namespace TiendaVinilos.ViewModelCliente
         private void verArtistas() { 
             ArtistasPage artistas = new ArtistasPage();
             artistas.DataContext = new ViewModelArtistas( artistas, contexto);
-            Pantalla = artistas;
-            Titulo = "Atistas";
+            cambiarPantalla(artistas, "Artistas");
         }
         private void verDiscos() { DiscosClientePage discos = new DiscosClientePage();
-            discos.DataContext = new ViewModelDiscos(discos, contexto, cliente);
-            Pantalla = discos;
-            Titulo = "Discos";
+            discos.DataContext = new ViewModelDiscos(discos,this, contexto, cliente);
+            cambiarPantalla(discos, "Discos");
         }
         private void verPromociones() { MessageBox.Show("Promociones"); }
         private void verContacto() { MessageBox.Show("Contacto"); }
         private void verCompra() { MessageBox.Show("Compra"); }
         private void verPerfil() { MessageBox.Show("Perfil");  }
         private void verInicio() { MessageBox.Show("Inicio"); }
+        public void cambiarPantalla(Page pantalla, string titulo="")
+        {
+            Pantalla= pantalla;
+            if (titulo.Length > 0) 
+            Titulo = titulo;
+        }
     }
 }

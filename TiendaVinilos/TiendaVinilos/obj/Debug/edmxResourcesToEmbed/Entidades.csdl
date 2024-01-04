@@ -73,6 +73,7 @@
     <NavigationProperty Name="ElementoCesta" Relationship="Self.FK_ElementoCesta_Disco" FromRole="Disco" ToRole="ElementoCesta" />
     <NavigationProperty Name="ImagenDisco" Relationship="Self.FK_ImagenDisco_Disco" FromRole="Disco" ToRole="ImagenDisco" />
     <NavigationProperty Name="Promocion" Relationship="Self.FK_Promocion_Disco" FromRole="Disco" ToRole="Promocion" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Duda">
     <Key>
@@ -156,7 +157,7 @@
     <Property Name="idDisco" Type="Int32" Nullable="false" />
     <Property Name="descuento" Type="Double" Nullable="false" />
     <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="fechaFin" Type="DateTime" Precision="3" />
+    <Property Name="fechaFin" Type="DateTime" Precision="3" Nullable="false" />
     <NavigationProperty Name="Disco" Relationship="Self.FK_Promocion_Disco" FromRole="Promocion" ToRole="Disco" />
   </EntityType>
   <EntityType Name="sysdiagrams">
