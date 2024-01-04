@@ -100,11 +100,21 @@
                     </Button>
                 </StackPanel>
             </Border>
-            <Separator Grid.ColumnSpan="2" Grid.Row="5"/>
+            <Separator Grid.ColumnSpan="3" Grid.Row="5"/>
             <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Left">
-                <Label Content="Opiniones" Margin=" 0,0,20,0" FontSize="26"/>
-                <Label Content="{Binding Opiniones}" FontSize="26"/>
+                <Label Content="Opiniones:" Margin=" 0,0,10,0" FontSize="26"/>
+                <Label Content="{Binding Opiniones, UpdateSourceTrigger=PropertyChanged}" FontSize="26"/>
             </StackPanel>
+            <ListBox x:Name="listBox" ItemsSource="{Binding Disco.ComentarioDisco}" Grid.Row="7" Grid.ColumnSpan="3">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Usuario.imagen}" Height="50" Width="50" VerticalAlignment="Top" Margin="30"/>
+                            <TextBlock Width="1000" Margin="0,30,0,0" Text="{Binding contenido}"  TextWrapping="Wrap" Height="{Binding Width, ElementName=listBox}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
     </ScrollViewer>
 </Page>

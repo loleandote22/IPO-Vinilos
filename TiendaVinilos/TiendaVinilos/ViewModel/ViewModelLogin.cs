@@ -69,7 +69,6 @@ namespace TiendaVinilos
                 MainWindowCliente ventana = new MainWindowCliente();
                 ventana.DataContext = new ViewModelMain(usuario, contexto);
                 ventana.Show();
-                ventana.Topmost=true;
             }
             loginWindow.Close();
         }

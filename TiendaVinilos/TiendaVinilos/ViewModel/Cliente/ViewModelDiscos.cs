@@ -379,6 +379,7 @@ namespace TiendaVinilos.ViewModel.Cliente
         private int likes;
         private int dislikes;
         private int unidades;
+        private int opiniones;
         private double precio;
         private ICommand likeCommand;
         private ICommand dislikeCommand;
@@ -419,6 +420,7 @@ namespace TiendaVinilos.ViewModel.Cliente
             }
             Likes = disco.favoritos.GetValueOrDefault();
             Dislikes = disco.criticos.GetValueOrDefault();
+            opiniones = disco.ComentarioDisco.Count();
         }
 
         public Disco Disco { get => disco; set => disco = value; }
@@ -426,6 +428,7 @@ namespace TiendaVinilos.ViewModel.Cliente
         public int Likes { get => likes; set { likes = value; OnPropertyChanged("Likes"); } }
         public int Dislikes { get => dislikes; set { dislikes = value; OnPropertyChanged("Dislikes"); } }
         public int Unidades { get => unidades; set { unidades = value; OnPropertyChanged("Unidades"); } }
+        public int Opiniones { get => opiniones; set { opiniones = value; OnPropertyChanged("Opiniones"); } }
         public double Precio { get => precio; set { precio = value; OnPropertyChanged("Precio"); } }
         public ICommand LikeCommand { get => likeCommand; set => likeCommand = value; }
         public ICommand DislikeCommand { get => dislikeCommand; set => dislikeCommand = value; }
