@@ -15,6 +15,12 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using Microsoft.Win32;
+using System.Net;
+using System.Media;
+using static System.Net.WebRequestMethods;
+using System.Runtime.CompilerServices;
 
 
 
@@ -25,7 +31,6 @@ namespace TiendaVinilos.ViewModel.Cliente
         private Entidades contexto;
         private DiscosClientePage pagina;
         public Usuario cliente;
-
         private List<int> generosSeleccionados = new List<int>();
         private List<int> artistasSeleccionados = new List<int>();
         private List<GeneroSeleccion> todosGeneros;
@@ -37,14 +42,9 @@ namespace TiendaVinilos.ViewModel.Cliente
         private int mayor = int.MaxValue;
         private int paginaActual;
         private int totalPaginas;
-        private int estadoBarra;
-        private string mensaje;
         private bool deseoActivo;
         private Visibility verBotonIzq;
         private Visibility verBotonDech;
-        private Visibility verPopUp;
-        private Visibility verCorrecto;
-        private Visibility verInfo;
         private ICommand verPaginaIzqCommand;
         private ICommand verPaginaDechCommand;
         public ViewModelMain ViewModelMain;
@@ -96,26 +96,19 @@ namespace TiendaVinilos.ViewModel.Cliente
             PaginaActual = 1;
             double elementos = discos.Count / 20.0;
             totalPaginas = Convert.ToInt32(Math.Ceiling(elementos));
-            verPopUp = Visibility.Collapsed;
             DeseoActivo = true;
             mostrarDiscos();
         }
         public Visibility VerBotonIzq { get => verBotonIzq; set { verBotonIzq = value; OnPropertyChanged("VerBotonIzq"); } }
         public Visibility VerBotonDech { get => verBotonDech; set { verBotonDech = value; OnPropertyChanged("VerBotonDech"); } }
-        public Visibility VerPopUp { get => verPopUp; set { verPopUp = value; OnPropertyChanged("VerPopUp"); } }
-        public Visibility VerCorrecto { get => verCorrecto; set { verCorrecto = value; OnPropertyChanged("VerCorrecto"); } }
-        public Visibility VerInfo { get => verInfo; set { verInfo = value; OnPropertyChanged("VerInfo");}
-}
 
         public ICommand VerPaginaIzqCommand { get => verPaginaIzqCommand; set { verPaginaIzqCommand = value;OnPropertyChanged("VerPaginaIzqCommand"); }  }
         public ICommand VerPaginaDechCommand { get => verPaginaDechCommand; set { verPaginaDechCommand = value; OnPropertyChanged("VerPaginaDechCommand"); } }
         public int PaginaActual { get => paginaActual; set { paginaActual = value; OnPropertyChanged("PaginaActual"); } }
 
         public int TotalPaginas { get => totalPaginas; set { totalPaginas = value; OnPropertyChanged("TotalPaginas"); } }
-        public int EstadoBarra { get => estadoBarra; set { estadoBarra = value; OnPropertyChanged("EstadoBarra"); } }
 
 
-        public string Mensaje { get => mensaje; set { mensaje = value; OnPropertyChanged("Mensaje"); } }
 
         public bool DeseoActivo { get => deseoActivo; set { deseoActivo = value; OnPropertyChanged("DeseoActivo"); } }
 
@@ -202,41 +195,11 @@ namespace TiendaVinilos.ViewModel.Cliente
             GeneroSeleccion seleccionado = (from s in todosGeneros where s.Genero.nombre == genero select s).First();
             seleccionado.Seleccionado = true;
             generosSeleccionados.Add(seleccionado.Genero.idGenero);
-            paginaActual = 1;
-            estadoBarra = 0;
-          
+            paginaActual = 1;          
             mostrarDiscos();
         }
 
-        public void barraPopup()
-        {
-            BackgroundWorker worker = new BackgroundWorker();
-            worker.WorkerReportsProgress = true;
-            worker.DoWork += actualizarBarra;
-            worker.ProgressChanged += actualizacion;
-            worker.RunWorkerAsync();
-        }
-
-        private void actualizarBarra(object sender, EventArgs e)
-        {
-            DeseoActivo = false;
-            for (int i = 0; i < 500; i++)
-            {
-                (sender as BackgroundWorker).ReportProgress(i);
-                Thread.Sleep(10);
-            }
-
-            (sender as BackgroundWorker).ReportProgress(-1);
-            DeseoActivo = true;
-        }
-
-        private void actualizacion(object sender, ProgressChangedEventArgs e)
-        {
-            if (e.ProgressPercentage >= 0)
-                EstadoBarra = e.ProgressPercentage;
-            else { EstadoBarra = 0; VerPopUp = Visibility.Collapsed; }
-            
-        }
+       
 
 
         private void generouncheckeado(object sender, EventArgs e)
@@ -278,19 +241,6 @@ namespace TiendaVinilos.ViewModel.Cliente
             if (PaginaActual>= TotalPaginas)
                 VerBotonDech = Visibility.Collapsed;
             mostrarDiscos();
-        }
-        public void noDeseado()
-        {
-
-            VerCorrecto = Visibility.Visible;
-            VerInfo = Visibility.Collapsed;
-            Mensaje = "Disco añadido a la lista de deseos";
-        }
-        public void yaDeseado()
-        {
-            VerInfo = Visibility.Visible;
-            VerCorrecto = Visibility.Collapsed;
-            Mensaje = "El disco ya estaba en tu lista de deseos";
         }
     }
    
@@ -342,7 +292,7 @@ namespace TiendaVinilos.ViewModel.Cliente
         private void mostrarDisco()
         {
             DiscoClientePage pagina= new DiscoClientePage();
-            pagina.DataContext = new ViewModelDisco(pagina, viewModel, disco);
+            pagina.DataContext = new ViewModelDisco(pagina, viewModel.ViewModelMain, disco, viewModel.cliente);
             viewModel.ViewModelMain.cambiarPantalla(pagina, disco.titulo);
         }
         private void comprarDisco()
@@ -351,7 +301,7 @@ namespace TiendaVinilos.ViewModel.Cliente
         }
         private void annadirDeseo()
         {
-            if (viewModel.DeseoActivo)
+            if (viewModel.ViewModelMain.EstadoBarra==0)
             {
                 Entidades contexto = viewModel.ViewModelMain.contexto;
                 bool deseado = (from d in contexto.Deseo where d.idUsuario == viewModel.cliente.idUsuario && d.idDisco == disco.idDisco select d).Count() > 0;
@@ -359,36 +309,49 @@ namespace TiendaVinilos.ViewModel.Cliente
                 {
                     contexto.Deseo.Add(new Deseo() { idDisco = disco.idDisco, idUsuario = viewModel.cliente.idUsuario });
                     contexto.SaveChanges();
-                    viewModel.noDeseado();
+                    viewModel.ViewModelMain.noDeseado();
                 }
                 else
-                {
-                    viewModel.yaDeseado();
-                }
-                viewModel.VerPopUp = Visibility.Visible;
-                viewModel.barraPopup();
+                    viewModel.ViewModelMain.yaDeseado();
+                viewModel.ViewModelMain.VerPopUp = Visibility.Visible;
+                viewModel.ViewModelMain.barraPopup();
             }
         }
     }
-    public class ViewModelDisco: ViewModelBase
+    public class ViewModelDisco : ViewModelBase
     {
         private DiscoClientePage pagina;
-        private ViewModelDiscos viewModel;
-        private string imagen;
+        private ViewModelMain viewModel;
         private Disco disco;
+        private Usuario usuario;
+        private string imagen;
+        private string contenido;
+        private string cancion;
+        private string imagenUsuario;
+        private string comentario;
         private int likes;
         private int dislikes;
         private int unidades;
         private int opiniones;
         private double precio;
+        private bool reproduciendo = false;
+        private bool activarComentario;
         private ICommand likeCommand;
         private ICommand dislikeCommand;
-        public ViewModelDisco(DiscoClientePage pagina, ViewModelDiscos viewModel, Disco disco)
+        private ICommand cancionCara1Command;
+        private ICommand cancionCara2Command;
+        private ICommand cancelarComentarioCommand;
+        private ICommand comentarComentarioCommand;
+        private ICommand anadirDeseoCommand;
+        private Visibility verCara2;
+        public ViewModelDisco(DiscoClientePage pagina, ViewModelMain viewModel, Disco disco, Usuario cliente)
         {
-            this.pagina= pagina;
-            this.viewModel= viewModel;
-            Disco= disco;
+            this.pagina = pagina;
+            this.viewModel = viewModel;
+            Disco = disco;
             imagen = disco.portada;
+            usuario = cliente;
+            imagenUsuario = cliente.imagen;
             Image image = new Image();
             BitmapImage myBitmapImage = new BitmapImage();
             myBitmapImage.BeginInit();
@@ -415,16 +378,39 @@ namespace TiendaVinilos.ViewModel.Cliente
                 myBitmapImage.EndInit();
                 image.Source = myBitmapImage;
                 image.Height = 100;
-                image.Margin = new Thickness(10,0,10,0);
+                image.Margin = new Thickness(10, 0, 10, 0);
                 pagina.imagenes.Children.Add(image);
             }
             Likes = disco.favoritos.GetValueOrDefault();
             Dislikes = disco.criticos.GetValueOrDefault();
+            bool hayCara2 = (from c in disco.Cancion where c.cara == 2 select c).Count() > 0;
+            if (hayCara2)
+                VerCara2 = Visibility.Visible;
+            else
+                VerCara2 = Visibility.Collapsed;
+
             opiniones = disco.ComentarioDisco.Count();
+            StackPanel panelComentarios = pagina.comentarios;
+            foreach (ComentarioDisco comentario in disco.ComentarioDisco.Reverse())
+                panelComentarios.Children.Add(new ComentarioControl() { DataContext = new ViewModelComentarios(comentario.Usuario.imagen, comentario.contenido) });
+            CancionCara1Command = new RelayCommand(new Action<object>((o) => reproducirCara1()));
+            CancionCara2Command = new RelayCommand(new Action<object>((o) => reproducirCara2()));
+            CancelarComentarioCommand = new RelayCommand(new Action<object>((o) => { cancelarComentario(); }));
+            ComentarComentarioCommand = new RelayCommand(new Action<object>((o) => { comentarComentario(); }));
+            AnadirDeseoCommand = new RelayCommand(new Action<object>((o) => annadirDeseo()));
+            ActivarComentario = false;
+        }
+
+        private void MediaPlayer_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            reproduciendo = false;
         }
 
         public Disco Disco { get => disco; set => disco = value; }
         public string Imagen { get => imagen; set => imagen = value; }
+        public string Contenido { get => contenido; set { contenido = value; OnPropertyChanged("Contenido"); } }
+        public string Cancion { get => cancion; set => cancion = value; }
+        public string ImagenUsuario { get => imagenUsuario; set => imagenUsuario = value; }
         public int Likes { get => likes; set { likes = value; OnPropertyChanged("Likes"); } }
         public int Dislikes { get => dislikes; set { dislikes = value; OnPropertyChanged("Dislikes"); } }
         public int Unidades { get => unidades; set { unidades = value; OnPropertyChanged("Unidades"); } }
@@ -432,6 +418,77 @@ namespace TiendaVinilos.ViewModel.Cliente
         public double Precio { get => precio; set { precio = value; OnPropertyChanged("Precio"); } }
         public ICommand LikeCommand { get => likeCommand; set => likeCommand = value; }
         public ICommand DislikeCommand { get => dislikeCommand; set => dislikeCommand = value; }
-    }
+        public ICommand CancionCara1Command { get => cancionCara1Command; set => cancionCara1Command = value; }
+        public ICommand CancionCara2Command { get => cancionCara2Command; set => cancionCara2Command = value; }
+        public ICommand CancelarComentarioCommand { get => cancelarComentarioCommand; set => cancelarComentarioCommand = value; }
+        public ICommand ComentarComentarioCommand { get => comentarComentarioCommand; set => comentarComentarioCommand = value; }
+        public ICommand AnadirDeseoCommand { get => anadirDeseoCommand; set => anadirDeseoCommand = value; }
+        public Visibility VerCara2 { get => verCara2; set { verCara2 = value; OnPropertyChanged("VerCara2"); } }
 
+        public string Comentario { get => comentario; set { comentario = value; ActivarComentario = comentario.Length > 0; OnPropertyChanged("Comentario"); } }
+
+        public bool ActivarComentario { get => activarComentario; set { activarComentario = value; OnPropertyChanged("ActivarComentario"); } }
+
+        private void reproducirCara1()
+        {
+            if (!reproduciendo)
+            {
+                Random r = new Random();
+                int posCancion = r.Next(0, disco.Cancion.Count());
+                viewModel.soundPlayer.SoundLocation = (from c in disco.Cancion where c.cara == 1 select c).ToList()[posCancion].enlace;
+                viewModel.soundPlayer.Play();
+                reproduciendo = true;
+            }
+            else { reproduciendo = false; viewModel.soundPlayer.Stop(); }
+
+        }
+
+        private void reproducirCara2()
+        {
+            if (!reproduciendo)
+            {
+                Random r = new Random();
+                int posCancion = r.Next(0, disco.Cancion.Count());
+                viewModel.soundPlayer.SoundLocation = (from c in disco.Cancion where c.cara == 2 select c).ToList()[posCancion].enlace;
+                viewModel.soundPlayer.Play();
+                reproduciendo = true;
+            }
+            else { reproduciendo = false; viewModel.soundPlayer.Stop(); }
+        }
+
+        private void cancelarComentario()
+        {
+            Comentario = "";
+        }
+        private void comentarComentario()
+        {
+            viewModel.contexto.ComentarioDisco.Add(new ComentarioDisco() { idUsuario = usuario.idUsuario, idDisco = disco.idDisco, contenido = Comentario, publicacion = DateTime.Now });
+            viewModel.contexto.SaveChanges();
+            cancelarComentario();
+            opiniones = disco.ComentarioDisco.Count();
+            StackPanel panelComentarios = pagina.comentarios;
+            panelComentarios.Children.Clear();
+            foreach (ComentarioDisco comentario in disco.ComentarioDisco.Reverse())
+                panelComentarios.Children.Add(new ComentarioControl() { DataContext = new ViewModelComentarios(comentario.Usuario.imagen, comentario.contenido) });
+        }
+        private void annadirDeseo()
+        {
+            if (viewModel.EstadoBarra==0)
+            {
+                Entidades contexto = viewModel.contexto;
+                bool deseado = (from d in contexto.Deseo where d.idUsuario == usuario.idUsuario && d.idDisco == disco.idDisco select d).Count() > 0;
+                if (!deseado)
+                {
+                    contexto.Deseo.Add(new Deseo() { idDisco = disco.idDisco, idUsuario = usuario.idUsuario });
+                    contexto.SaveChanges();
+                    viewModel.noDeseado();
+                }
+                else
+                    viewModel.yaDeseado();
+                viewModel.VerPopUp = Visibility.Visible;
+                viewModel.barraPopup();
+                BackgroundWorker worker = new BackgroundWorker();
+            }
+        }
+    }
 }

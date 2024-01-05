@@ -12,6 +12,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Presentación/IconosCliente/vectorPrincipalCliente.xaml" />
                 <ResourceDictionary Source="/Presentación/Estilos/EstiloPrincipalCliente.xaml"/>
+                <ResourceDictionary>
+                    <Style TargetType="Label" BasedOn="{StaticResource labelNav}"/>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -28,27 +31,21 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Height=" auto" FontSize="30"  Foreground="#eeeeee" VerticalContentAlignment="Center" FontFamily="lucky skirt" Margin="30,0"  Command="{Binding InicioCommand}">
-                    <Button.Content>
-                        <Border Background="{StaticResource Oxford blue}" Height=" 70">
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                                <Image Source="/Presentación/Imágenes/Logo.png" Margin="20,5,0,10" Height="50"/>
-                                <TextBlock FontFamily="lucky skirt" VerticalAlignment="Center" Foreground="#EEEEEE" Text="VINILOS.SA"/>
-                            </StackPanel>
-                        </Border>
-                    </Button.Content>
+                <Button Style="{StaticResource buttonTitle}" HorizontalAlignment="Left" FontSize="30" VerticalContentAlignment="Center" FontFamily="lucky skirt" Margin="30,0"  Command="{Binding InicioCommand}">
+                    <StackPanel Background="{StaticResource Oxford blue}" >
+                            <!--<Image Source="/Presentación/Imágenes/Logo.png" Margin="20,5,0,10" Height="50"/>-->
+                            <TextBlock FontFamily="lucky skirt" VerticalAlignment="Center" Foreground="#EEEEEE"  Text="VINILOS.SA"/>
+                        </StackPanel>
                 </Button>
                 <ComboBox Width="150" ItemsSource="{Binding ListaIdiomas}" Background="White" SelectedItem="{Binding IdiomaSeleccionado, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" VerticalAlignment="Center" Margin="30,0"/>
-                <Button Grid.Column="2" VerticalAlignment="Center" Command="{Binding CommandCompra}">
-                    <StackPanel Orientation="Horizontal" Background="{StaticResource Oxford blue}" VerticalAlignment="Center" Height="auto">
+                <Button Grid.Column="2" Style="{StaticResource buttonNav }" VerticalAlignment="Center" Command="{Binding CommandCompra}">
+                    <StackPanel Orientation="Horizontal">
                         <Label Content="{Binding ElementosCarrito, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Foreground="WhiteSmoke"/>
                         <Image Source="{StaticResource carrito}"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Column="3" Command="{Binding UsuarioCommand}" Margin="20,0,30,0" Padding="-1">
-                    <Grid Background="{StaticResource Oxford blue}">
-                        <Image Source="{StaticResource usuario}"/>
-                    </Grid>
+                <Button Grid.Column="3" Style="{StaticResource buttonNav }" Command="{Binding UsuarioCommand}" Margin="20,0,30,0">
+                    <Image Source="{StaticResource usuario}"/>
                 </Button>
             </Grid>
             <Grid Grid.Row="1" Background="{StaticResource Black}" VerticalAlignment="Top" Height="40">
@@ -59,64 +56,66 @@
                     <ColumnDefinition MinWidth="240"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Command="{Binding CommandArtistas}" Margin="10,0" >
-                    <Button.Content>
-                        <Border Background="{StaticResource Black}" Margin="-1">
-                            <Grid HorizontalAlignment="Center">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{StaticResource cantante}" />
-                                <Label Grid.Column="1" Content="Artistas"  FontSize="16" />
-                            </Grid>
-                        </Border>
-                    </Button.Content>
+                <Button Command="{Binding CommandArtistas}" Style="{StaticResource buttonNav}" Margin="10,0" >
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{StaticResource cantante}" />
+                        <Label Grid.Column="1" Content="Artistas"  FontSize="16" />
+                    </Grid>
                 </Button>
-                <Button Grid.Column="1" Command="{Binding CommandDiscos}" FontSize="16" Margin="10,0" >
-                    <Button.Content>
-                        <Border Background="{StaticResource Black}" Margin="-1">
-                            <Grid HorizontalAlignment="Center">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{StaticResource disco}" />
-                                <Label Grid.Column="1" Content="Discos"/>
-                            </Grid>
-                        </Border>
-                    </Button.Content>
+                <Button Grid.Column="1" Style="{StaticResource buttonNav}" Command="{Binding CommandDiscos}" FontSize="16" Margin="10,0" >
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{StaticResource disco}" />
+                        <Label Grid.Column="1" Content="Discos" />
+                    </Grid>
                 </Button>
-                <Button Grid.Column="2" Background="Transparent" Command="{Binding CommandPromociones}" Margin="10,0" FontSize="16" >
-                    <Button.Content>
-                        <Border Background="{StaticResource Black}" Margin="-1">
-                            <Grid HorizontalAlignment="Center">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{StaticResource promociones}" HorizontalAlignment="Right"/>
-                                <Label Grid.Column="1" Content="Promociones"/>
-                            </Grid>
-                        </Border>
-                    </Button.Content>
+                <Button Grid.Column="2" Style="{StaticResource buttonNav}" Command="{Binding CommandPromociones}" Margin="10,0" FontSize="16" >
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{StaticResource promociones}"/>
+                        <Label Grid.Column="1" Content="Promociones"/>
+                    </Grid>
                 </Button>
-                <Button  Grid.Column="3" Command="{Binding CommandContacto}" FontSize="16" Margin="10,0">
-                    <Button.Content>
-                        <Border Background="{StaticResource Black}" Margin="-1">
-                            <Grid HorizontalAlignment="Center">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="/Presentación/IconosCliente/comunicar.png" />
-                                <Label Grid.Column="1" Content="Contacto"/>
-                            </Grid>
-                        </Border>
-                    </Button.Content>
+                <Button  Grid.Column="3" Style="{StaticResource buttonNav}" Command="{Binding CommandContacto}" FontSize="16" Margin="10,0">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="/Presentación/IconosCliente/comunicar.png" />
+                        <Label Grid.Column="1" Content="Contacto"/>
+                    </Grid>
                 </Button>
             </Grid>
         </Grid>
-        <Frame Content="{Binding Pantalla, UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden"/>
+        <Grid>
+            <Frame Content="{Binding Pantalla, UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden"/>
+            <Border Style="{StaticResource popupDeseo}" Visibility="{Binding VerPopUp}">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Image Source="{StaticResource checkTooltip}" Visibility="{Binding VerCorrecto, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Image Source="{StaticResource infoTooltip}" Visibility="{Binding VerInfo, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="{Binding Mensaje}" Foreground="White" FontSize="22" Height="40" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <ProgressBar Minimum="0" Maximum="500" Value="{Binding EstadoBarra, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0" Grid.Row="1" Height="10" Foreground="Green" Background="#000"/>
+                </Grid>
+            </Border>
+        </Grid>
     </DockPanel>
 </Window>

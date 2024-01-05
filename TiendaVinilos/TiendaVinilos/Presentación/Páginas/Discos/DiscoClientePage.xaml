@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TiendaVinilos.Presentación.Páginas.Discos"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="800"
+      d:DesignHeight="1500" d:DesignWidth="800"
       Title="DiscoClientePage">
     <Page.Resources>
         <ResourceDictionary>
@@ -15,8 +15,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="50,0" HorizontalAlignment="Center">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Margin="50,0,0,50" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="2*"/>
@@ -30,14 +30,40 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image  Width="250" Source="{Binding Disco.portada}" Height="250" Margin="50,50,0,20" Grid.RowSpan="2"/>
+            <Image Width="250" Source="{Binding Disco.portada}" Height="250" Margin="50,50,0,20" Grid.RowSpan="2"/>
             <StackPanel x:Name="imagenes" Orientation="Horizontal" Margin="50,0" Height="100" Grid.Row="2"/>
             <StackPanel Grid.Column="1"  Grid.RowSpan="2" HorizontalAlignment="Left" Margin=" 20,50">
-                <Label Content="{Binding Disco.titulo}" HorizontalAlignment="Left" FontSize="36" />
-                <TextBlock  HorizontalAlignment="Left" Text="{Binding Disco.descripcion}" FontSize="20" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"/>
+                <TextBox IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding Disco.titulo}" HorizontalAlignment="Left" FontSize="36" />
+                <TextBox IsReadOnly="True" BorderThickness="0"  HorizontalAlignment="Left" Text="{Binding Disco.descripcion}" FontSize="20" TextWrapping="WrapWithOverflow" VerticalAlignment="Top"/>
             </StackPanel>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label FontSize="15" VerticalAlignment="Bottom" Content="Cara 1"/>
+                <Button Grid.Row="1" Style="{StaticResource botonReproductor }" Command="{Binding CancionCara1Command}" HorizontalAlignment="Left" Width="300">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource reproductor}" Margin="0,0,20,0"/>
+                        <Label Content="Canción aleatoria" VerticalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+                <Label FontSize="15" Grid.Column="1" VerticalAlignment="Bottom" Visibility="{Binding VerCara2, UpdateSourceTrigger=PropertyChanged}" Content="Cara 2"/>
+                <Button Grid.Row="1" Grid.Column="1" Visibility="{Binding VerCara2, UpdateSourceTrigger=PropertyChanged}" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource reproductor}" Margin="0,0,20,0"/>
+                        <Label Content="Canción aleatoria" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+            </Grid>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3">
                 <Label Margin="10,0" FontSize="25" VerticalAlignment="Center" Content="{Binding Likes, UpdateSourceTrigger=PropertyChanged}"/>
                 <Image Source="{StaticResource like}"/>
@@ -85,7 +111,54 @@
                         <Image Source="{StaticResource camion}"/>
                         <Label Content="Entrega a domicilio" FontSize="20" FontWeight="Bold"/>
                     </StackPanel>
-                    <TextBlock Text="Entrega más rápida el viernes, 3 de noviembre. Haz el pedido en 21 horas 40 mins." FontSize="20" HorizontalAlignment="Center" Margin="50,30" TextWrapping="WrapWithOverflow"/>
+                    <TextBlock  Text="Entrega más rápida el viernes, 3 de noviembre. Haz el pedido en 21 horas 40 mins." FontSize="20" HorizontalAlignment="Center" Margin="50,30" TextWrapping="WrapWithOverflow"/>
+                    <Button  Command="{Binding AnadirDeseoCommand}" Margin="50,20">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border BorderThickness="1" CornerRadius="5" BorderBrush="Black">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Trigger.EnterActions>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <ThicknessAnimation To="30,10"  Storyboard.TargetProperty="Margin" Duration="0:0:0.3" >
+                                                                    <ThicknessAnimation.EasingFunction>
+                                                                        <BackEase/>
+                                                                    </ThicknessAnimation.EasingFunction>
+                                                                </ThicknessAnimation>
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </Trigger.EnterActions>
+                                                    <Trigger.ExitActions>
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <ThicknessAnimation To="50,20"  Storyboard.TargetProperty="Margin" Duration="0:0:0.5" >
+                                                                    <ThicknessAnimation.EasingFunction>
+                                                                        <BackEase/>
+                                                                    </ThicknessAnimation.EasingFunction>
+                                                                </ThicknessAnimation>
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </Trigger.ExitActions>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Presentación/IconosCliente/deseo.png"  Height="20"/>
+                            <Label Content="Lista de deseos"  FontSize="18" />
+                        </StackPanel>
+                    </Button>
                     <Button Style="{StaticResource botonClic}" Margin="50,20" >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="{StaticResource carrito}"/>
@@ -105,16 +178,23 @@
                 <Label Content="Opiniones:" Margin=" 0,0,10,0" FontSize="26"/>
                 <Label Content="{Binding Opiniones, UpdateSourceTrigger=PropertyChanged}" FontSize="26"/>
             </StackPanel>
-            <ListBox x:Name="listBox" ItemsSource="{Binding Disco.ComentarioDisco}" Grid.Row="7" Grid.ColumnSpan="3">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding Usuario.imagen}" Height="50" Width="50" VerticalAlignment="Top" Margin="30"/>
-                            <TextBlock Width="1000" Margin="0,30,0,0" Text="{Binding contenido}"  TextWrapping="Wrap" Height="{Binding Width, ElementName=listBox}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <Grid Grid.Row="7" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding ImagenUsuario}" Margin="10, 0, 30, 0" Grid.RowSpan="2" VerticalAlignment="Top" Width="50" Height="50"/>
+                <TextBox Grid.Column="1" BorderThickness="0,0,0,1" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Text="{Binding Comentario, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="auto"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right">
+                    <Button Content="Cancelar" Style="{StaticResource botonComentario}" Width="100" Margin="0,0,30,0" Command="{Binding CancelarComentarioCommand}"/>
+                    <Button Content="Comentar" Style="{StaticResource botonComentario}" Width="100" Command="{Binding ComentarComentarioCommand}" IsEnabled="{Binding ActivarComentario, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel x:Name="comentarios" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,30,0,0"/>
         </Grid>
     </ScrollViewer>
 </Page>

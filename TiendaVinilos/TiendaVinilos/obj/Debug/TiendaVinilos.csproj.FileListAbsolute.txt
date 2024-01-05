@@ -100,6 +100,7 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\IconosCliente\vectorPrincipalCliente.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\ArtistaControl.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\DiscoControl.g.cs
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\LoadingControl.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\ArtistasClientePage.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\DiscosAdministradorPage.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\Discos\DiscoClientePage.g.cs
@@ -107,12 +108,14 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowAdministrador.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\LoginWindow.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowCliente.g.cs
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\TarjetaBienvenidaWindow.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\App.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_Content.g.cs
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.cache
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos_MarkupCompile.lref
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\ArtistaControl.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\DiscoControl.baml
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\LoadingControl.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\ArtistasClientePage.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\DiscosAdministradorPage.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Páginas\Discos\DiscoClientePage.baml
@@ -120,6 +123,7 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowAdministrador.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\LoginWindow.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\MainWindowCliente.baml
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\TarjetaBienvenidaWindow.baml
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.g.resources
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.Properties.Resources.resources
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.GenerateResource.cache
@@ -127,7 +131,6 @@ C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.CopyComplete
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.exe
 C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.pdb
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\LoadingControl.g.cs
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\LoadingControl.baml
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\TarjetaBienvenidaWindow.g.cs
-C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Ventanas\TarjetaBienvenidaWindow.baml
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\TiendaVinilos.csproj.ResolveComReference.cache
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\ComentarioControl.g.cs
+C:\Users\yo\Desktop\coso\Projecto-IKREA\IPO-Vinilos\TiendaVinilos\TiendaVinilos\obj\Debug\Presentación\Controles\ComentarioControl.baml

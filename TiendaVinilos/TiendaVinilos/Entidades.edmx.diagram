@@ -4,43 +4,42 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ee109b40f88b433e9f96241332e74e4b" Name="Diagram1">
-        <EntityTypeShape EntityType="TiendaVinilosModel.Artista" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Cancion" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ComentarioDisco" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Deseo" Width="1.5" PointX="10.5" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Disco" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Duda" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ElementoPedido" Width="1.5" PointX="10.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Genero" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ImagenArtista" Width="1.5" PointX="5.25" PointY="19.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ImagenDisco" Width="1.5" PointX="7.5" PointY="21.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Integrante" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Pedido" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Promocion" Width="1.5" PointX="7.5" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Tienda" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.Usuario" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TiendaVinilosModel.ElementoCesta" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Artista_Genero" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Disco_Artista" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_ImagenArtista_Artista" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Integrante_Artista" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Cancion_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Table_1_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Table_1_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Deseo_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Deseo_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Disco_Genero" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Elemento_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_ElementoCesta_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_ImagenDisco_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Promocion_Disco" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Duda_Admin" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Duda_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_ElementoPedido_Pedido" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_Pedido_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="TiendaVinilosModel.FK_ElementoCesta_Usuario" ManuallyRouted="false" />
+      <Diagram DiagramId="c6fa9313f94b476b9cec04810937b810" Name="Diagram1">
+        <EntityTypeShape EntityType="Entidades.Artista" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Cancion" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.ComentarioDisco" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Deseo" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Disco" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Duda" Width="1.5" PointX="10.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.ElementoPedido" Width="1.5" PointX="10.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Genero" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.ImagenArtista" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.ImagenDisco" Width="1.5" PointX="7.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Integrante" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Pedido" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Promocion" Width="1.5" PointX="7.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.sysdiagrams" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Tienda" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.Usuario" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Entidades.ElementoCesta" Width="1.5" PointX="10.5" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="Entidades.FK_Artista_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Disco_Artista" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ImagenArtista_Artista" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Integrante_Artista" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Cancion_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ComentarioDisco_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Table_1_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Deseo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Disco_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ElementoCesta_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ElementoPedido_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ImagenDisco_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Promocion_Disco" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Duda_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Duda_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ElementoPedido_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_Pedido_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Entidades.FK_ElementoCesta_Usuario" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

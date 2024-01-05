@@ -29,7 +29,7 @@
             <Label Content="{Binding ModoAcceso}" FontWeight="DemiBold"  FontSize="20" Grid.Row="1" Grid.Column="1"/>
             <Label Content="Ultima conexión:" Grid.Column="1" Grid.Row="2" FontSize="15"/>
             <Label Content="{Binding Fecha}" Grid.Column="1" Grid.Row="3" FontSize="20"/>
-            <Button Content="Continuar" Command="{Binding ContinuarCommand}" Background="White" OverridesDefaultStyle="True" FontSize="16" Height="50" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Width="100">
+            <Button Content="Continuar" Command="{Binding ContinuarCommand}" Background="White" OverridesDefaultStyle="True" FontSize="16" Height="50" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Margin="0,0,50,0" Width="100">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
