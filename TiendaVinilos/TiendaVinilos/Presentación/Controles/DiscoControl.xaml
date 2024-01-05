@@ -9,6 +9,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Presentación/IconosCliente/vectorDiscoCliente.xaml" />
                 <ResourceDictionary Source="/Presentación/Estilos/EstiloDiscosCliente.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -49,7 +50,7 @@
 
             <Button Grid.Row="4" Style="{StaticResource botonCompraDiscos}" Command="{Binding ComprarDiscoCommand}" Margin="0" Width="180">
                 <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
-                    <Image Source="/Presentación/IconosCliente/carrito-cliente.png"  Width="20"/>
+                    <Image Source="{StaticResource carrito}"  Width="20"/>
                     <Label Foreground="White" Content="Añadir a la cesta" FontSize="16"/>
                 </StackPanel>
             </Button>

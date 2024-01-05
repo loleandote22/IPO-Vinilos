@@ -155,11 +155,6 @@ namespace TiendaVinilos.ViewModel.Cliente
                 discos = (from d in contexto.Disco where d.precio >= menor && d.precio <= mayor select d).ToList();
             if (artistasSeleccionados.Count > 0)
                 discos = (from d in discos from a in artistasSeleccionados where d.idArtista == a select d).ToList();
-            if(discos.Count > 0)
-            for(int k = 0; k < 39; k++)
-            {
-                discos.Add(discos[k]);
-            }
             double elementos = discos.Count / 20.0;
             TotalPaginas = Convert.ToInt32(Math.Ceiling(elementos));
             if (totalPaginas == 0)
