@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Media;
+using System.Security.Cryptography.Xml;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,6 +20,7 @@ namespace TiendaVinilos.ViewModelCliente
     {
         private string texto;
         private string idiomaSeleccionado;
+        private string mensaje;
         private ICommand commandArtistas;
         private ICommand commandDiscos;
         private ICommand commandPromociones;
@@ -25,10 +30,16 @@ namespace TiendaVinilos.ViewModelCliente
         private ICommand inicioCommand;
         private List<string> listaIdiomas = new List<string> { "Español", "Inglés" };
         private int elementosCarrito;
+        private int estadoBarra;
         private Page pantalla;
         private string titulo;
         public Entidades contexto = new Entidades();
-        private Usuario cliente; 
+        private Usuario cliente;
+
+        private Visibility verPopUp;
+        private Visibility verCorrecto;
+        private Visibility verInfo;
+        public SoundPlayer soundPlayer = new SoundPlayer();
         public ViewModelMain(Usuario cliente, Entidades entidades)
         {
             this.cliente = cliente;
@@ -44,7 +55,7 @@ namespace TiendaVinilos.ViewModelCliente
             IdiomaSeleccionado = listaIdiomas[0];
             Titulo = "Bienvenido";
             DateTime fecha = System.DateTime.Now;
-
+            verPopUp = Visibility.Collapsed;
         }
 
         public string Texto { get => texto;
@@ -57,6 +68,7 @@ namespace TiendaVinilos.ViewModelCliente
         }
 
         public string IdiomaSeleccionado { get => idiomaSeleccionado; set => idiomaSeleccionado = value; }
+        public string Mensaje { get => mensaje; set { mensaje = value; OnPropertyChanged("Mensaje"); } }
         public List<string> ListaIdiomas { get => listaIdiomas; set => listaIdiomas = value; }
         public ICommand CommandArtistas { get => commandArtistas; set => commandArtistas = value; }
         public ICommand CommandDiscos { get => commandDiscos; set => commandDiscos = value; }
@@ -66,7 +78,15 @@ namespace TiendaVinilos.ViewModelCliente
         public ICommand UsuarioCommand { get => usuarioCommand; set => usuarioCommand = value; }
         public ICommand InicioCommand { get => inicioCommand; set => inicioCommand = value; }
         public int ElementosCarrito { get => elementosCarrito; set { elementosCarrito = value;OnPropertyChanged("ElementosCarrito"); } }
+        public int EstadoBarra { get => estadoBarra; set { estadoBarra = value; OnPropertyChanged("EstadoBarra"); } }
         public string Titulo { get => titulo;set { titulo = value; ;OnPropertyChanged("Titulo"); } }
+
+        public Visibility VerPopUp { get => verPopUp; set { verPopUp = value; OnPropertyChanged("VerPopUp"); } }
+        public Visibility VerCorrecto { get => verCorrecto; set { verCorrecto = value; OnPropertyChanged("VerCorrecto"); } }
+        public Visibility VerInfo
+        {
+            get => verInfo; set { verInfo = value; OnPropertyChanged("VerInfo"); }
+        }
         public Page Pantalla { get => pantalla; set {
                 pantalla = value;
                 OnPropertyChanged("Pantalla");
@@ -92,6 +112,49 @@ namespace TiendaVinilos.ViewModelCliente
             Pantalla= pantalla;
             if (titulo.Length > 0) 
             Titulo = titulo;
+            soundPlayer.Stop();
+        }
+
+
+        public void noDeseado()
+        {
+
+            VerCorrecto = Visibility.Visible;
+            VerInfo = Visibility.Collapsed;
+            Mensaje = "Disco añadido a la lista de deseos";
+        }
+        public void yaDeseado()
+        {
+            VerInfo = Visibility.Visible;
+            VerCorrecto = Visibility.Collapsed;
+            Mensaje = "El disco ya estaba en tu lista de deseos";
+        }
+        public void barraPopup()
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += actualizarBarra;
+            worker.ProgressChanged += actualizacion;
+            worker.RunWorkerAsync();
+        }
+
+        private void actualizarBarra(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 500; i++)
+            {
+                (sender as BackgroundWorker).ReportProgress(i);
+                Thread.Sleep(10);
+            }
+
+            (sender as BackgroundWorker).ReportProgress(-1);
+        }
+
+        private void actualizacion(object sender, ProgressChangedEventArgs e)
+        {
+            if (e.ProgressPercentage >= 0)
+                EstadoBarra = e.ProgressPercentage;
+            else { EstadoBarra = 0; VerPopUp = Visibility.Collapsed; }
+
         }
     }
 }

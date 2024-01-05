@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="TiendaVinilosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Entidades.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Artista">
     <Key>
       <PropertyRef Name="idArtista" />
@@ -16,9 +16,11 @@
     <Key>
       <PropertyRef Name="idCancion" />
     </Key>
-    <Property Name="idCancion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="idDisco" Type="int" Nullable="false" />
+    <Property Name="idCancion" Type="int" Nullable="false" />
+    <Property Name="idDisco" Type="int" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="enlace" Type="varchar(max)" Nullable="false" />
+    <Property Name="cara" Type="int" />
   </EntityType>
   <EntityType Name="ComentarioDisco">
     <Key>
@@ -190,7 +192,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Cancion_Disco">
-    <End Role="Disco" Type="Self.Disco" Multiplicity="1" />
+    <End Role="Disco" Type="Self.Disco" Multiplicity="0..1" />
     <End Role="Cancion" Type="Self.Cancion" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Disco">
@@ -407,7 +409,7 @@ advertencia 6002: La tabla o vista 'TiendaVinilos.dbo.ElementoCesta' no tiene de
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="TiendaVinilosModelStoreContainer">
+  <EntityContainer Name="EntidadesStoreContainer">
     <EntitySet Name="Artista" EntityType="Self.Artista" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cancion" EntityType="Self.Cancion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ComentarioDisco" EntityType="Self.ComentarioDisco" Schema="dbo" store:Type="Tables" />

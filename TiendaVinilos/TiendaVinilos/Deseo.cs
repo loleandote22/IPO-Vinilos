@@ -18,7 +18,6 @@ namespace TiendaVinilos
         public int idDisco { get; set; }
         public int idUsuario { get; set; }
     
-        public virtual Disco Disco { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

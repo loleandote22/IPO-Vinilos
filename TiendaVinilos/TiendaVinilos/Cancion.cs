@@ -15,8 +15,10 @@ namespace TiendaVinilos
     public partial class Cancion
     {
         public int idCancion { get; set; }
+        public Nullable<int> idDisco { get; set; }
         public string nombre { get; set; }
-        public int idDisco { get; set; }
+        public string enlace { get; set; }
+        public Nullable<int> cara { get; set; }
     
         public virtual Disco Disco { get; set; }
     }

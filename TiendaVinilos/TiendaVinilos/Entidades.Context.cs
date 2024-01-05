@@ -16,7 +16,7 @@ namespace TiendaVinilos
     public partial class Entidades : DbContext
     {
         public Entidades()
-            : base("name=Entidades")
+            : base("name=TiendaVinilosEntities")
         {
         }
     

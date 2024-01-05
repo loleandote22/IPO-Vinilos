@@ -19,9 +19,8 @@ namespace TiendaVinilos
         {
             this.Cancion = new HashSet<Cancion>();
             this.ComentarioDisco = new HashSet<ComentarioDisco>();
-            this.Deseo = new HashSet<Deseo>();
-            this.ElementoPedido = new HashSet<ElementoPedido>();
             this.ElementoCesta = new HashSet<ElementoCesta>();
+            this.ElementoPedido = new HashSet<ElementoPedido>();
             this.ImagenDisco = new HashSet<ImagenDisco>();
             this.Promocion = new HashSet<Promocion>();
         }
@@ -46,13 +45,11 @@ namespace TiendaVinilos
         public virtual ICollection<Cancion> Cancion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ComentarioDisco> ComentarioDisco { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Deseo> Deseo { get; set; }
         public virtual Genero Genero { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ElementoPedido> ElementoPedido { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ElementoCesta> ElementoCesta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ElementoPedido> ElementoPedido { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ImagenDisco> ImagenDisco { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

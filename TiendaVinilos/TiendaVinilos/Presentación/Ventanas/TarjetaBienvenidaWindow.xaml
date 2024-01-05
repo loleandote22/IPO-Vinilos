@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TiendaVinilos.Presentación.Ventanas"
-        ShowInTaskbar="False" AllowDrop="False"  ResizeMode="NoResize" 
+        xmlns:local="clr-namespace:TiendaVinilos.Presentación.Ventanas" AllowDrop="False"  ResizeMode="NoResize" 
         WindowStyle="None"  
          WindowState="Normal"
         Background="Transparent"
@@ -30,7 +29,7 @@
             <Label Content="{Binding ModoAcceso}" FontWeight="DemiBold"  FontSize="20" Grid.Row="1" Grid.Column="1"/>
             <Label Content="Ultima conexión:" Grid.Column="1" Grid.Row="2" FontSize="15"/>
             <Label Content="{Binding Fecha}" Grid.Column="1" Grid.Row="3" FontSize="20"/>
-            <Button Content="Continuar" Command="{Binding ContinuarCommand}" Background="White" OverridesDefaultStyle="True" FontSize="16" Height="50" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Width="100">
+            <Button Content="Continuar" Command="{Binding ContinuarCommand}" Background="White" OverridesDefaultStyle="True" FontSize="16" Height="50" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" Margin="0,0,50,0" Width="100">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
